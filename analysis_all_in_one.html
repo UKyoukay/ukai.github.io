@@ -1404,6 +1404,3017 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </body>
 </html>
 
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/style.css">
+<script type="text/javascript" src="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/config.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<title>はじめに</title>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NW2C5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NW2C5Z');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<h1>はじめに</h1>
+
+<div class="intro">
+    <p>
+        本講義では、合成関数、逆関数、対数微分について学ぶ。
+        関数の合成とその微分、逆関数の概念と微分、対数微分法について解説する。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">関数の合成</div>
+    <p>
+        関数\(y=f(x)\)と\(z=g(y)\)の合成とは、\(z=g(f(x))\)のことである。
+        この関数を\(g\circ f\)と表す。
+    </p>
+    <p>
+        複雑な関数をより単純な関数の合成として表すことで、微分の計算が容易になる場合がある。
+        例えば、\(\sin(x^2)\)は\(f(x)=x^2, g(x)=\sin(x)\)の合成として表される。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">合成関数の微分</div>
+    <p>
+        合成関数の微分は以下の公式で計算できる。
+        \[
+        g(f(x))'=f'(x)g'(f(x))
+        \]
+    </p>
+    <p>
+        同じ公式を以下のように表すこともできる。
+        \[
+        \frac{d(g\circ f)}{dx}(x)=\frac{dg}{dx}(f(x))\times\frac{df}{dx}(x)
+        \]
+        または
+        \[
+        \frac{dz}{dx}=\frac{dz}{dy}\frac{dy}{dx}
+        \]
+    </p>
+    <p>
+        この公式は一次近似の考え方からも理解できる。
+        \(f(x)\)の\(x=a\)における一次近似と\(g(x)\)の\(x=f(a)\)における一次近似を組み合わせることで、
+        合成関数\(g(f(x))\)の\(x=a\)における一次近似が得られ、その傾きが\(f'(a)g'(f(a))\)となる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">逆関数</div>
+    <p>
+        \(f(x)\)の逆関数\(g(x)\)とは、それらの合成関数が
+        \[
+        f(g(x)) = x \\
+        g(f(x)) = x
+        \]
+        を満たすものをいう。
+    </p>
+    <p>
+        逆関数は常に存在するとは限らない。
+        定義域を制限することで逆関数が存在することもある。
+    </p>
+    <p>
+        基本的な逆関数の例は以下の通り。
+    </p>
+    <ul>
+        <li>冪関数の逆関数：\(f(x)=x^n\)の逆関数は\(g(x)=\sqrt[n]{x}\)（\(x\geq0\)）</li>
+        <li>指数関数と対数関数：\(f(x)=a^x\)と\(g(x)=\log_ax\)は互いに逆関数</li>
+        <li>逆三角関数：\(\sin x\)の逆関数は\(\arcsin x\)、\(\cos x\)の逆関数は\(\arccos x\)、\(\tan x\)の逆関数は\(\arctan x\)</li>
+    </ul>
+</div>
+
+<div class="section">
+    <div class="section-title">逆関数の微分</div>
+    <p>
+        関数\(f(x)\)の逆関数\(g(x)\)の導関数は以下の公式で与えられる。
+        \[
+        g'(x)=\frac{1}{f'(g(x))}
+        \]
+    </p>
+    <p>
+        この公式は合成関数の微分から導出される。
+        \(f(g(x))=x\)の両辺を\(x\)で微分すると、
+        \[
+        f'(g(x))\times g'(x)=1
+        \]
+        となることから得られる。
+    </p>
+    <p>
+        逆関数の微分公式を用いて、以下の導関数を計算できる。
+    </p>
+    <ul>
+        <li>対数関数：\((\log(x))'=\dfrac{1}{x}\)</li>
+        <li>冪乗根：\((x^{1/n})'=\dfrac{1}{n}x^{1/n-1}\)</li>
+        <li>逆三角関数：\((\arcsin x)'=\dfrac{1}{\sqrt{1-x^2}}\)、\((\arctan x)'=\dfrac{1}{1+x^2}\)</li>
+    </ul>
+</div>
+
+<div class="section">
+    <div class="section-title">対数微分</div>
+    <p>
+        対数微分は、対数関数との合成関数を微分することである。
+        \(g(x)>0\)かつ微分可能な関数に対して、
+        \[
+        (\log(g(x)))'=\frac{g'(x)}{g(x)}
+        \]
+        となる。
+    </p>
+    <p>
+        対数微分は複雑な関数の微分を簡略化するのに有用である。
+        例えば、\(f(x)=(x+1)^2(x+3)^3\)のような関数の微分を対数微分を用いて計算できる。
+    </p>
+    <p>
+        また、対数微分は変化率の考察にも用いられる。
+        \(\dfrac{f'(x)}{f(x)}=(\log f(x))'\)を弾性力という。
+        これは\(x\)の変化率に対する\(y\)の変化率の比を表す。
+    </p>
+</div>
+
+<div class="summary">
+    <p>
+        合成関数、逆関数、対数微分について学ぶ。
+        これらの概念と公式を組み合わせることで、様々な複雑な関数の導関数を計算することができる。
+    </p>
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/style.css">
+<script type="text/javascript" src="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/config.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<title>関数の合成</title>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NW2C5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NW2C5Z');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<h1>関数の合成</h1>
+
+<div class="intro">
+    <p>
+        二つの関数を続けて適応することで新しい関数が定まる。
+        これを関数の合成とか合成関数という。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">関数の合成</div>
+    <p>
+        関数\(y=f(x)\)と\(z=g(y)\)の合成とは、\(z=g(f(x))\)のことである。
+        この関数を\(g\circ f\)と表す。
+    </p>
+    <p>
+        合成は\(f\)と\(g\)の順番いれかえると結果が変わる。
+        \(g\circ f\)という記号を見ると左の関数\(g\)が先なような気がするが、右の関数\(f\)の方が先に適用される関数であることに注意しよう。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        関数\(f(x)=x+1, g(x)=x^2\)の合成\((g\circ f)(x)\)および\((f\circ g)(x)\)はどのような関数になるか計算しよう。
+    </p>
+    <p>
+        \[
+        (g\circ f)(x)=g(f(x))=g(x+1)=(x+1)^2
+        \]
+        である。
+    </p>
+    <p>
+        \[
+        (f\circ g)(x)=f(g(x))=f(x^2)=x^2+1
+        \]
+        である。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">関数を二つの関数の合成と見る</div>
+    <p>
+        与えられた関数\(f(x)\)を二つ以上の関数の合成と考えよう。
+        つまり、\(f(x)=g(h(x))\)となるような関数\(g(x), h(x)\)を見つける。
+    </p>
+    <p>
+        このような関数\(g(x), h(x)\)は必ずしも一つに決まるわけではない。
+        ただ、\(f(x)\)よりも簡単な関数を見つけることができれば、
+        微分の計算などが容易になる場合がある。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        関数
+        \[
+        y=\sin(x^2)
+        \]
+        を何らかの関数の合成として表す方法を考えよう。
+    </p>
+    <p>
+        この関数はまず\(x\)に\(z=x^2\)を対応させ、さらに\(y=\sin(z)\)を対応させる。
+        つまり、\(f(x)=x^2, g(x)=\sin(x)\)という関数の合成を考えると
+        \[
+        y=\sin(x^2)=g(f(x))=(g\circ f)(x)
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        関数
+        \[
+        y=(x^2+1)^3
+        \]
+        を何らかの関数の合成として表す方法を考えよう。
+    </p>
+    <p>
+        この関数はまず\(x\)に\(z=x^2+1\)を対応させ、さらに\(z\)に\(y=z^3\)を対応させる。
+        つまり、\(f(x)=x^2+1, g(x)=x^3\)という関数の合成が
+        \[
+        y=(x^2+1)^3=g(f(x))=(g\circ f)(x)
+        \]
+        となる。
+    </p>
+    <p>
+        これをさらに、\(u=x^2, z=u+1, y=z^3\)と三つの関数の合成として捉えることもできる。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        関数
+        \[
+        y=\exp(-x^2)
+        \]
+        を何らかの関数の合成として表す方法を考えよう。
+    </p>
+    <p>
+        この関数はまず\(x\)に\(z=-x^2\)を対応させ、さらに\(\exp(z)\)を対応させる。
+        つまり、\(f(x)=-x^2, g(x)=\exp(x)\)という関数の合成が
+        \[
+        y=\exp(-x^2)=g(f(x))=(g\circ f)(x)
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        関数
+        \[
+        y = \sin^3x
+        \]
+        を何らかの関数の合成として表す方法を考えよう。
+    </p>
+    <p>
+        この関数はまず\(x\)に\(z=\sin(x)\)を対応させ、さらに\(z\)に\(y=z^3\)を対応させる。
+        つまり、\(f(x)=\sin(x), g(x)=x^3\)という関数の合成が
+        \[
+        y=\sin^3x=g(f(x))=(g\circ f)(x)
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="summary">
+    <p>
+        合成関数の概念について学んだ。
+        関数\(f(x)\)と\(g(x)\)の合成関数\(y=g(f(x))\)は、まず\(x\)に\(f(x)\)を対応させ、さらに\(g(x)\)を対応させる関数である。
+        これは\(y=(g\circ f)(x)\)とも表現される。
+    </p>
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/style.css">
+<script type="text/javascript" src="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/config.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<title>合成関数の微分</title>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NW2C5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NW2C5Z');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<h1>合成関数の微分</h1>
+
+<div class="intro">
+    <p>
+        ここでは合成関数の微分を計算する方法を学ぶ。
+        複雑な関数をより単純な関数の合成と解釈して、
+        その導関数を計算することができる。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        関数
+        \[
+        y=\exp(-x^2)
+        \]
+        の導関数を計算する。
+    </p>
+    <p>
+        この関数を$f(x)=-x^2, g(x)=\exp(x)$の合成関数$(g\circ f)(x)$と考え、
+        合成関数の微分公式を用いることで導関数を計算できる。
+    </p>
+    <p>
+        \[
+        f'(x)=-2x \\
+        g'(x)=\exp(x)
+        \]
+        である。
+    </p>
+    <p>
+        よって、$x=a$の近くでは$f(x)$は$f'(a)=-2a$倍するという一次関数で近似できる。
+        さらに、このとき$z=f(a)$の近くでは$g(x)$は$g'(z)=\exp(f(a))$倍するという一次関数で近似できる。
+        合成関数を、それぞれを近似する一次関数によって近似すると考える。
+        すると、$-2a$倍したあと$\exp(f(a))=\exp(-a^2)$倍するという一次関数、
+        つまり全体としては$-2a\exp(-a^2)$倍するという一次関数で近似できる。
+        よって、合成関数の$x=a$における微分係数は
+        \[
+        -2a\exp(-a^2)
+        \]
+        である。
+        これは$f'(a)\times g'(f(a))$に一致する。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">合成関数の微分公式</div>
+    <p>
+        合成関数の微分は
+        \[
+        g(f(x))'=f'(x)g'(f(x))
+        \]
+        と計算できる。
+    </p>
+    <p>
+        同じ公式を
+        \[
+        \frac{d(g\circ f)}{dx}(x)=\frac{dg}{dx}(f(x))\times\frac{df}{dx}(x)
+        \]
+        と表したり、
+        \[
+        \frac{dz}{dx}=\frac{dz}{dy}\frac{dy}{dx}
+        \]
+        と表したりする。
+    </p>    
+    <p>
+        関数の合成の導関数は関数の導関数の積になる。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        関数
+        \[
+        y=(x+1)^3
+        \]
+        の導関数を計算する。
+    </p>
+    <p>
+        この関数を$f(x)=x+1, g(x)=x^3$の合成と考える。
+        \[
+        y=(x+1)^3=g(f(x))=(g\circ f)(x)
+        \]
+        という合成関数とみて、合成関数の微分公式を用いて導関数を求める。
+    </p>
+    <p>
+        \[
+        f'(x)=1 \\
+        g'(x)=3x^2
+        \]
+        であるから、
+        \[
+        \frac{dy}{dx}=g'(f(x))f'(x)=3(x+1)^2
+        \]
+        と計算できる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">合成関数の微分公式の直感的な導出</div>
+    <p>
+        合成関数の微分公式を一次近似を通して理解しよう。
+        関数$f(x)$と$g(x)$の合成関数$(g\circ f)(x)$の$x=a$における微分係数を考える。
+    </p>
+    <p>
+        まず$f(x)$の$x=a$における微分係数は
+        \[
+        f(a+h)\sim f(a)+f'(a)h
+        \]
+        と近似できる$h$の係数$f'(a)$のことである。
+        また、$g(x)$の$x=b$における微分係数は
+        \[
+        g(b+k)\sim g(b)+g'(b)k
+        \]
+        と近似できる$k$の係数$g'(b)$のことである。 
+    </p>
+    <p>
+        これらを用いて合成関数の$x=a+h$での近似を考える。
+        $b=f(a), f'(a)h=k$とおくと
+        $$
+        (g\circ f)(a+h)=g(f(a+h)) \\
+        \sim g(f(a)+f'(a)h) \\
+        = g(b+k) \\
+        \sim g(b)+g'(b)k \\
+        = g(f(a)) + g'(f(a))f'(a)h
+        $$
+        と計算できる。
+        これは$g(f(x))$の$x=a$における微分係数が$f'(a)g'(f(a))$であることを表している。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        $n$を正の整数として、関数
+        $$
+        y=\sin^n x
+        $$
+        を$x$で微分して導関数を求めよう。
+    </p>
+    <p>
+        この関数を$z=\sin x, y=z^n$の合成と考えよう。
+        同じことだが、$f(x)=\sin x, g(x)=x^n$の合成と考えよう。
+        つまり、
+        $$
+        y=\sin^n x=g(f(x))=(g\circ f)(x)
+        $$
+        という合成関数とみて、合成関数の微分公式を用いて導関数を求める。
+    </p>
+    <p>
+        $$
+        \frac{dz}{dx}=f'(x)=\cos x \\
+        \frac{dy}{dz}=g'(x)=nx^{n-1}
+        $$
+        であるから、
+        $$
+        y'=g'(f(x))f'(x)=n\sin^{n-1}x\cos x
+        $$
+        と計算できる。
+    </p>
+</div>
+
+<div class="summary">
+    <p>
+        合成関数の微分公式について学んだ。
+        関数$f(x)$と$g(x)$の合成関数$y=g(f(x))$の導関数は$y'=g'(f(x))f'(x)$と計算できる。
+        これは$\frac{dy}{dx}=\frac{dy}{dz}\frac{dz}{dx}$とも表現される。
+    </p>
+    <p>
+        合成関数の微分公式は一次近似の考え方からも理解できる。
+        $f(x)$の$x=a$における一次近似と$g(x)$の$x=f(a)$における一次近似を組み合わせることで、合成関数$g(f(x))$の$x=a$における一次近似が得られ、その傾きが$f'(a)g'(f(a))$となることが分かる。
+    </p>
+</div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/style.css">
+<script type="text/javascript" src="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/config.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<title>逆関数</title>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NW2C5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NW2C5Z');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<h1>逆関数</h1>
+
+<div class="intro">
+    <p>
+        この節では、逆関数について学ぶ。
+        逆関数は、関数\(f(x)\)に対して\(f(g(x))=x\)、\(g(f(x))=x\)を満たす関数である。
+        \(y=f(x)\)を\(x\)について解いて\(x=g(y)\)とすると、\(f(x)\)の逆関数は\(g(x)\)である。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">逆関数</div>
+    <p>
+        \(f(x)\)の逆関数\(g(x)\)とは、それらの合成関数が
+        \[
+        f(g(x)) = x \\
+        g(f(x)) = x
+        \]
+        を満たすものをいう。
+    </p>
+    <p>
+        これは、\(y=f(x)\)と\(x=g(y)\)であることが同値である、と言い換えることもできる。
+    </p>
+    <p>
+        逆関数は常に存在するとは限らない。
+        また定義域を制限することで逆関数が存在することもある。
+    </p>
+</div>
+
+
+<div class="section">
+    <div class="section-title">指数関数と対数関数</div>
+    <p>
+        \(y=a^x\)であることと\(x=\log_ay\)であることは同値である。
+        つまり、指数関数と対数関数は互いに逆関数である。
+    </p>
+    <p>
+        実際、\(f(x)=a^x\)と\(g(x)=\log_ax\)とすると、
+        \[
+        f(g(x))=a^{\log_ax}=x \\
+        g(f(x))=\log_a(a^x)=x
+        \]
+        となる。
+        よって、\(f(x)=a^x\)と\(g(x)=\log_ax\)は互いに逆関数である。
+    </p>
+</div>
+
+
+<div class="example">
+    <p>
+        次の関数
+        \[
+        f(x)=x^2
+        \]
+        の逆関数は
+        \[
+        g(x)=\sqrt{x}, x\geq0
+        \]
+        である。
+    </p>
+    <p>
+        実際、
+        \[
+        f(g(x))=(\sqrt{x})^2=x \\
+        g(f(x))=\sqrt{x^2}=x
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        より一般に、正の整数\(n\)に対して、
+        \(f(x)=x^n\)の逆関数は
+        \[
+        g(x)=\sqrt[n]{x},\quad (x\geq0)
+        \]
+        である。
+    </p>
+    <p>
+        実際、
+        \[
+        f(g(x))=(x^n)^n=x \\
+        g(f(x))=\sqrt[n]{x^n}=x
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">逆三角関数</div>
+    <p>
+        三角関数の逆関数は、三角関数の定義域を制限することで、逆関数が存在するようになる。
+        三角関数の逆関数を逆三角関数という。
+    </p>
+    <p>
+        \(\sin x\)の逆関数を\(\arcsin x\)と呼ぶ。
+        \(-1 \leq y \leq 1\)に対して、
+        \(y = \sin x\)となる\(-\dfrac{\pi}{2} \leq x \leq \dfrac{\pi}{2}\)がただ一つ存在する。
+        この\(x\)を\(\arcsin y\)と書く。
+    </p>
+    <p>
+        例えば、
+        \[
+        \arcsin \dfrac{1}{2} = \dfrac{\pi}{6}
+        \]
+        である。
+    </p>
+    <p>
+        \(\cos x\)の逆関数は\(\arccos x\)と呼ぶ。
+        定義域をどうするかはいくつか考え方があるが、
+        例えば\(-1 \leq y \leq 1\)に対して、
+        \(y = \cos x\)となる\(0 \leq x \leq \pi\)がただ一つ存在する。
+        この\(x\)を\(\arccos y\)と書く。
+    </p>
+    <p>
+        \(\tan x\)の逆関数は\(\arctan x\)と呼ぶ。
+        任意の実数\(y\)に対して、
+        \(y = \tan x\)となる\(-\dfrac{\pi}{2} &lt; x &lt; \dfrac{\pi}{2}\)がただ一つ存在する。
+        この\(x\)を\(\arctan y\)と書く。
+    </p>
+    <p>
+        例えば、
+        \[
+        \arctan 1 = \dfrac{\pi}{4}
+        \]
+        である。
+    </p>
+</div>
+
+<div class="summary">
+    <p>
+        逆関数は、関数\(f(x)\)に対して\(f(g(x))=x\)、\(g(f(x))=x\)を満たす関数である。
+        冪乗の逆関数は冪乗根であり、指数関数の逆関数は対数関数である。
+    </p>
+    <p>
+        三角関数の逆関数を逆三角関数という。
+        \(\sin x\)の逆関数は\(\arcsin x\)、\(\cos x\)の逆関数は\(\arccos x\)、\(\tan x\)の逆関数は\(\arctan x\)である。
+    </p>
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/style.css">
+<script type="text/javascript" src="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/config.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<title>逆関数の微分</title>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NW2C5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NW2C5Z');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<h1>逆関数の微分</h1>
+
+<div class="intro">
+    <p>
+        今回の講義では、逆関数の微分について学ぶ。
+        逆関数の微分は、合成関数の微分を用いて計算することができる。
+        また、逆関数の微分を用いて、対数関数や逆三角関数の微分を計算することができる。
+    </p>
+</div>
+
+
+<div class="section">
+    <div class="section-title">対数関数の微分</div>
+    <p>
+        底を自然対数\(e\)とする対数関数\(\log(x)\)は指数関数\(\exp(x)\)の逆関数である。
+        このことを利用して対数関数の導関数を求めよう。
+    </p>
+    <p>
+        逆関数のグラフは、直線\(y=x\)に関して対称である。
+        \(x=a\)における\(y=e^x\)の接線の傾きは、\((e^x)'=e^x\)より\(e^a\)である。
+    </p>
+    <p>
+        これを\(y=x\)について対称に変換すると、
+        \(x=e^a\)における\(y=\log x\)の接線の傾きが\(\dfrac{1}{e^a}\)であることがわかる。
+    </p>
+    <p>
+        \(\log(x)\)の導関数は
+        \[
+        (\log(x))'=\frac{1}{x}
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">逆関数の微分公式</div>
+    <p>
+        \(g(x)\)が\(f(x)\)の逆関数であるとする。
+        このとき、\(f(g(x))=x\)である。
+    </p>
+    <p>
+        \(f(g(x))=x\)の両辺を\(x\)で微分すると、次のような関係が得られる。
+        \[
+        f'(g(x))\times g'(x)=1
+        \]
+        このことから\(f(x)\)の逆関数\(g(x)\)の微分は\(f\)の微分の逆数であることがわかる。    
+        \[
+        g'(x)=\frac{1}{f'(g(x))}
+        \]
+    </p>
+    <p>
+        微分係数の定義には\(x=a\)の周りの様子しか影響しない。
+        したがって逆関数の定義域には影響を受けない。    
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">一次近似の考え方</div>
+    <p>
+        \(y=f(x), b=f(a)\)とし、\(g\)を\(f\)の逆関数とする。
+        すると\(g(y)=x, g(b)=a\)である。
+        このとき\(g(y)\)の\(y\)による微分を考えよう。    
+    </p>
+    <p>
+        \(f\)の微分による近似が\(f(x)\sim f(a)+(x-a)f'(a)\)となっているとしよう。
+        これを\(x\)について解けば
+        \[
+        x\sim a+\frac{1}{f'(a)}(f(x)-f(a))
+        \]
+        であり、
+        \[
+        g(y)\sim g(b)+\frac{1}{f'(a)}(y-b)
+        \]
+        とかける。
+        このようにして、逆関数\(g(y)\)の微分が
+        \[
+        g'(y)=\frac{1}{f'(x)}
+        \]
+        となることがわかる。    
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        関数
+        \[
+        f(x)=\sqrt{x}
+        \]
+        の導関数を求めよう。
+    </p>
+    <p>
+        この関数は\(g(x)=x^2\)の逆関数である。
+        したがって、逆関数の微分公式を使うと
+        \[
+        f'(x)=\frac{1}{g'(f(x))}=\frac{1}{2\sqrt{x}}
+        \]
+        となる。
+    </p>
+    <p>
+        より一般に、\(n\)を正の整数として\(x\)の\(n\)乗根\(f(x)=x^{1/n}\)の導関数は
+        \[
+        f'(x)=\frac{1}{n}x^{1/n-1}
+        \]
+        となる。    
+    </p>
+    <p>
+        これは、上と同様に逆関数の微分公式を用いると
+        \[
+        f'(x)=\frac{1}{g'(f(x))}=\frac{1}{n}x^{1/n-1}
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">逆三角関数の微分</div>
+    <p>
+        三角関数\(\sin x\)の逆関数\(\arcsin x\)の導関数は
+        \[
+        (\arcsin x)'=\frac{1}{\sqrt{1-x^2}}
+        \]
+        となる。
+    </p>
+    <p>
+        逆関数の微分公式を用いて計算しよう。
+        \(\sin x\)の逆関数\(\arcsin x\)の導関数は
+        \[
+        (\arcsin x)'=\frac{1}{\cos(\arcsin x)}
+        \]
+        となる。
+    </p>
+    <p>
+        ここで、\(\cos(\arcsin x)=\sqrt{1-x^2}\)である。
+        なぜなら、\(y=\arcsin x\)とすると、\(\sin y=x\)である。
+        \(y\)の動く範囲が\(-\dfrac{\pi}{2}\leq y\leq \dfrac{\pi}{2}\)であるから、\(\cos y\geq 0\)である。
+        よって、
+        \[
+        \cos y = \sqrt{1-\sin^2 y} = \sqrt{1-x^2}
+        \]
+        となる。
+    </p>
+    <p>
+        よって、
+        \[
+        (\arcsin x)'=\frac{1}{\sqrt{1-x^2}}
+        \]
+        となる。
+    </p>
+    <p>
+        また、\(\tan x\)の逆関数\(\arctan x\)の導関数は
+        \[
+        \frac{d}{dx}\arctan x=\frac{1}{1+x^2}
+        \]
+        となる。
+    </p>
+    <p>
+        逆関数の微分公式を用いて計算しよう。
+        \(\tan x\)の逆関数\(\arctan x\)の導関数は
+        \[
+        (\arctan x)'=\frac{1}{1/\cos^2(\arctan x)}
+        \]
+        となる。
+    </p>
+    <p>
+        ここで、\(\cos^2(\arctan x)=1+\tan^2(\arctan x)=1+x^2\)である。
+        なぜなら、\(y=\arctan x\)とすると、\(\tan y=x\)である。
+        よって、
+        \[
+        \cos^2 y = \frac{1}{\tan^2 y + 1} = \frac{1}{x^2 + 1}
+        \]
+        となる。
+    </p>
+    <p>
+        よって、
+        \[
+        (\arctan x)'=\frac{1}{1+x^2}
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="summary">
+    <p>
+        関数\(f(x)\)の逆関数\(g(x)\)の導関数は
+        \[
+        g'(x)=\frac{1}{f'(g(x))}
+        \]
+        となる。
+    </p>
+    <p>
+        逆関数の微分公式を用いて、対数関数、逆三角関数の導関数を求めた。
+    </p>
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/style.css">
+<script type="text/javascript" src="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/config.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<title>対数微分</title>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NW2C5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NW2C5Z');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<h1>対数微分</h1>
+
+<div class="intro">
+    <p>
+        今回は、対数微分を学ぶ。
+        対数微分は、対数関数との合成関数を微分することであり、これを用いて幾つかの関数の微分を計算できる。
+        また、対数微分は変化量ではなく変化率の考察にも用いられる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">対数微分</div>
+    <p>
+        \(g(x)\)を\(g(x)>0\)かつ微分可能な関数とし、\(f(x)=\log(g(x))\)と定義する。
+        この\(f(x)\)を\(x\)で微分しよう。        
+    </p>
+    <p>
+        \((\log x)'=\dfrac{1}{x}\)であることを用いると、
+        合成関数の微分から
+        \[
+        f'(x)=g'(x)\frac{1}{g(x)} = \frac{g'(x)}{g(x)}
+        \]
+        となる。
+        これを対数微分という。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        上の計算を利用して\(f(x)=x^x\)の微分を計算せよ。
+    </p>
+    <p>
+        \(\log(f(x))=x\log x\)である。
+        積の微分公式を用いると、
+        \[
+        (\log f(x))'=\log x + 1
+        \]
+        となる。
+    </p>
+    <p>
+        従って、
+        \[
+        \log x+1=\dfrac{f'(x)}{x^x} \\
+        f'(x)=x^x(\log x+1)
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">弾性力</div>
+    <p>
+        変数\(x, y\)の間に\(y=f(x)\)という関係があるとする。
+        \(x\)が\(x+\Delta x\)に変化したとき、\(y\)が\(y+\Delta y\)に変化するとする。
+        この変化量の比\(\dfrac{\Delta y}{\Delta x}\)は、\(\Delta x\)が小さいとき、\(f(x)\)の微分係数\(f'(x)\)に近似できた。
+    </p>
+    <p>
+        変化率\(\Delta x/x\)と\(\Delta y/y\)の比は、
+        \[
+        \frac{\Delta y/y}{\Delta x/x} = \frac{\Delta y}{\Delta x} \times \frac{x}{y}
+        \]
+        となる。
+        ここで、\(\Delta x\)が十分小さいとき、\(\dfrac{\Delta y}{\Delta x}\)は\(y'=f'(x)\)で近似できるため、
+        変化率の比は
+        \[
+        \frac{y'}{y}x
+        \]
+        で近似できる。
+    </p>
+    <p>
+        ここに現れる\(\dfrac{y'}{y}\)は対数微分
+        \[
+        \frac{f'(x)}{f(x)}=(\log f(x))'
+        \]
+        である。
+        これを弾性力という。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        \(f(x)=(x+1)^2(x+3)^3\)の微分を対数微分を用いて計算しよう。
+    </p>
+    <p>
+        \(\log f(x)=2\log(x+1)+3\log(x+3)\)である。
+        よって、
+        \[
+        (\log f(x))'=2\frac{1}{x+1}+3\frac{1}{x+3}
+        \]
+        となる。
+        従って、
+        \[
+        f'(x)
+        =
+        f(x)(\log f(x))' \\
+        =
+        (x+1)^2(x+3)^3(2\frac{1}{x+1}+3\frac{1}{x+3}) \\
+        =
+        2(x+1)(x+3)^3+3(x+1)^2(x+3)^2
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="summary">
+    <p>
+        対数微分は、対数関数との合成関数を微分することであり、これを用いて幾つかの関数の微分を計算できる。
+        また、対数微分は変化量ではなく変化率の考察にも用いられる。
+    </p>
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/style.css">
+<script type="text/javascript" src="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/config.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<title>はじめに</title>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NW2C5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NW2C5Z');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<h1>はじめに</h1>
+
+<div class="intro">
+    <p>
+        本講義では、微分法の応用について学ぶ。
+        関数の増減と極値、2階微分による判定、関数の凸性と変曲点、ニュートン法、ロピタルの定理について解説する。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">関数の増減と導関数</div>
+    <p>
+        関数\(f(x)\)が\(x=a\)で極小値を持つとは、\(a\)の近くで\(f(x) \lt f(a)\)となることをいう。
+        関数\(f(x)\)が\(x=a\)で極大値を持つとは、\(a\)の近くで\(f(x) \gt f(a)\)となることをいう。
+    </p>
+    <p>
+        \(x=a\)の周りで微分可能な関数\(f(x)\)が\(x=a\)で極値を持つならば、微分係数\(f'(a)=0\)である。
+        これは極値を持つための必要条件であるが、十分条件ではない。
+    </p>
+    <p>
+        区間\((a,b)\)において、すべての\(a\lt x\lt b\)なる\(x\)において、
+        \(f'(x)\gt0\)ならば\(f(x)\)は増加し、\(f'(x)\lt0\)ならば\(f(x)\)は減少する。
+        \(f'(x)=0\)ならば\(f(x)\)は定数関数である。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">2階微分による判定</div>
+    <p>
+        \(f'(a)=0\)であることは極値をもつための必要条件であるが、これだけでは極大なのか極小なのか、
+        あるいは極値を持たないのかは判断できない。
+    </p>
+    <p>
+        \(f\)が2階微分できる場合、\(f'(a)=0\)であるとき、
+        \(f''(a)\gt0\)ならば\(f\)は\(a\)で極小値を持ち、
+        \(f''(a)\lt0\)ならば\(f\)は\(a\)で極大値を持つ。
+    </p>
+    <p>
+        \(f''(a)=0\)である場合には、極大値を持つ場合も極小値を持つ場合も、
+        いずれでもない場合もありうることに注意する。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">関数の凸性と変曲点</div>
+    <p>
+        関数\(f\)が区間\(I\)で下に凸であるとは、すべての\(I\)の点\(a, b\)と\(0\lt t\lt1\)に対し、
+        \[
+        f((1-t)a+tb) \leq (1-t)f(a) + tf(b)
+        \]
+        が成り立つことをいう。
+    </p>
+    <p>
+        関数\(f\)が区間\(I\)で上に凸であるとは、すべての\(I\)の点\(a, b\)と\(0\lt t\lt1\)に対し、
+        \[
+        f((1-t)a+tb) \geq (1-t)f(a) + tf(b)
+        \]
+        が成り立つことをいう。
+    </p>
+    <p>
+        関数\(f\)が区間\(I\)で2階微分可能であるとき、
+        \(x\in I\)で\(f''(x)\geq 0\)ならば\(f\)は区間\(I\)で下に凸であり、
+        \(x\in I\)で\(f''(x)\leq 0\)ならば\(f\)は区間\(I\)で上に凸である。
+    </p>
+    <p>
+        グラフが上に凸と下に凸が入れ替わる点を変曲点という。
+        \(f\)が\(a\)で変曲点ならば\(f''(a)=0\)であるが、逆は言えない。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">ニュートン法</div>
+    <p>
+        ニュートン法は\(f(x)=0\)という方程式を近似的に解く手法である。
+        解の近似値を微分を利用して求める。
+    </p>
+    <p>
+        初期値\(a\)を適当にとり、\((a,f(a))\)における接線と\(x\)軸の交点を新しい近似値とする。
+        この手続きを繰り返すことで解に収束する。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">ロピタルの定理</div>
+    <p>
+        ロピタルの定理は不定形の極限を計算するための定理である。
+        \(\lim_{x\to a}f(x)=0\)かつ\(\lim_{x\to a}g(x)=0\)のとき、
+        \(x=a\)の近傍で\(g'(x)\neq 0\)であれば、
+        \(\lim_{x\to a}\dfrac{f'(x)}{g'(x)}\)が存在するならば、
+        \(\lim_{x\to a}\dfrac{f(x)}{g(x)}\)も存在し、両者は等しい。
+    </p>
+    <p>
+        この定理は、\(f, g\)ともに\(x\to a\)で\(0\)に近づくが、
+        その近づき方の速さを比較することで極限値を求める。
+    </p>
+</div>
+
+<div class="summary">
+    <p>
+        微分法の応用として、関数の増減と極値、2階微分による判定、関数の凸性と変曲点、
+        ニュートン法、ロピタルの定理について学ぶ。
+        これらの概念と手法を用いることで、関数の性質を詳しく調べたり、
+        方程式の解を数値的に求めたりすることができる。
+    </p>
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/style.css">
+<script type="text/javascript" src="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/config.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<title>関数の増減と導関数</title>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NW2C5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NW2C5Z');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<h1>関数の増減と導関数</h1>
+<div class="intro">
+    <p>
+        導関数を利用して、関数の増減を調べる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">極値</div>
+    <p>
+        関数\(f(x)\)が\(x=a\)で極小値を持つとは、
+        \(a\)の近くで\(f(x) &lt; f(a)\)となることをいう。
+    </p>
+    <p>
+        \(f(x)\)が\(x=a\)で極大値を持つとは、
+        \(a\)の近くで\(f(x) &gt; f(a)\)となることをいう。
+    </p>
+    <p>
+        極値は極大値と極小値の総称である。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">極値と微分係数</div>
+    <p>
+        \(x=a\)の周りで微分可能な関数\(f(x)\)が\(x=a\)で極値を持つならば、微分係数\(f'(a)=0\)である。
+    </p>    
+    <p>
+        微分の定義に従って計算する。
+        \(a\)の左から近づけた場合\(h&lt;0\)なので\(\dfrac{f(a+h)-f(a)}{h}\leq0\)である。
+        \(a\)の右から近づけた場合\(h&gt;0\)なので\(\dfrac{f(a+h)-f(a)}{h}\geq0\)である。
+        \(a\)で微分可能なので、\(h\to 0\)としたときこの二つが一致する。
+        従って\(f'(a)=0\)である。    
+    </p>
+    <p>
+        逆は言えないことに注意しよう。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">区間での増減</div>
+    <p>
+        一点の情報ではなく、ある区間での導関数の情報から関数の増減を調べる。
+    </p>
+    <p>
+        区間\((a,b)\)において、つまりすべての\(a&lt; x&lt; b\)なる\(x\)において、
+        \(f'(x)&gt;0\)ならば、この範囲で\(f(x)\)は増加している。
+        \(f'(x)&lt;0\)ならば、この範囲で\(f(x)\)は減少している。
+        \(f'(x)=0\)ならば、この範囲で\(f(x)\)は定数関数である。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        \(f(x) = x^3 - 3x\)を考える。
+        \(f'(x) = 3x^2 - 3 = 3(x - 1)(x + 1)\)となる。
+        \(x=1\)または\(x=-1\)が極値を持つ必要条件。    
+    </p>
+    <p>
+        実際に極値かどうかは、その周りでの関数の増減を調べればわかる。
+        例えば\(x=1\)においては、\(x=1\)の近くで\(x&lt;1\)で\(f'(x)&lt;0\)なので減少し、
+        \(x=1\)の近く\(x&gt;1\)で\(f'(x)&gt;0\)なので増加する。
+        よって、\(x=1\)で極小であることがわかる。    
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">極値を持つための十分条件</div>
+    <p>
+        一般にまとめておくと、\(f'(a)=0\)でかつ、
+        \(x=a\)の近傍で\(x&lt;a\)において\(f'(x)&lt;0\)であり、\(x&gt;a\)において\(f'(x)&gt;0\)ならば、
+        \(f\)は\(x=a\)において極大である。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        \(f(x)=3x^4-4x^3\)とする。
+        \(f'(x)=12x^-12x^2=12x^2(x-1)\)である。
+        極値を持つ必要条件は\(x=0\)または\(x=1\)である。    
+    </p>
+    <p>
+        \(f(x)\)の増減を調べるために\(f'(x)\)の正負を調べると、
+        \(x &lt; 0\)では\(f'(x)&lt;0\)、\(0&lt;x&lt;1\)では\(f'(x)&lt;0\)、\(x&gt;1\)では\(f'(x)&gt;0\)である。
+        よって\(f(x)\)は、
+        \(x &lt; 0\)で減少、\(0&lt;x&lt;1\)で減少、\(x&gt;1\)で増加する。
+    </p>
+    <p>
+        このことから、\(x=1\)では極小値をもち、\(x=0\)では極値を持たないことがわかる。
+    </p>
+</div>
+
+<div class="summary">
+    
+</div>
+
+<div class="section">
+    <div class="section-title">おまけ</div>
+    <p>
+        講義内で紹介した、導関数の正負と関数の増減に関する性質について簡単に説明する。
+        まず、平均値の定理と呼ばれる次の定理を紹介する。
+    </p>
+    <p></p>
+        閉区間\([a,b]\)上の実数値微分可能関数\(f(x)\)に対し、ある\(c\in(a,b)\)が存在して
+        \[
+        \frac{f(b)-f(a)}{b-a}=f'(c)
+        \]
+        となる。        
+        平均値の定理を用いると、次のようなことがわかる。
+    
+    <p>
+        \(f(x)\)が開区間\((a,b)\)において\(f'(x)&gt;0\)ならば\(f(x)\)は増加関数である。
+        なぜなら、もしある\(a &lt; x_1 &lt; x_2 &lt; b\)が存在して\(f(x_1) &gt; f(x_2)\)となるならば、
+        平均値の定理より、ある\(c\in(x_1,x_2)\)が存在して
+        \[
+        \frac{f(x_2)-f(x_1)}{x_2-x_1}=f'(c) &lt; 0
+        \]
+        となるが、これは\(f'(x) &gt; 0\)に矛盾する。
+        よって、\(f(x)\)は増加関数である。
+        同様にして、\(f'(x) &lt; 0\)ならば\(f(x)\)は減少関数であることもわかる。
+        この二つを組み合わせると、\(f'(x) = 0\)ならば\(f(x)\)は定数関数であることもわかる。
+    </p>
+    <p>
+        平均値の定理を証明するために、平均値の定理の特別な場合である、ロルの定理を証明する。
+        これは平均値の定理の特別な場合として\(f(a)=f(b)\)の場合を考えたものである。
+        閉区間\([a,b]\)上の実数値微分可能関数\(f(x)\)が\(f(a)=f(b)\)を満たすとする。
+        このとき、ある\(c\in(a,b)\)が存在して\(f'(c)=0\)となる。    
+    </p>
+    <p>
+        ロルの定理を認めて、一般の\(f(x)\)に対して平均値の定理を証明しよう。
+        \[
+        g(x)=f(x)-\frac{f(a)-f(b)}{a-b}x
+        \]
+        と定めると、\(g(a)=g(b)\)となる。
+        この\(g(x)\)に対してロルの定理を適用すると、ある\(c\in(a,b)\)が存在して\(g'(c)=0\)となる。
+        このとき、
+        \[
+        f'(c)=\frac{f(b)-f(a)}{b-a}
+        \]
+        となる。
+        これで平均値の定理が証明された。
+    </p>
+    <p>
+        ロルの定理を証明するために、数直線上の連続関数に関する最大値の定理を用いる。
+        実数値関数\(f(x)\)が閉区間\([a,b]\)上連続であれば\(f(x)\)は最大値をもつ。
+    </p>
+    <p>
+        これを用いてロルの定理を証明しよう。
+        まず、\(f(x)\)が定数関数であればよい。
+        \(f(x)\)が定数関数でない場合、最大値の定理を使うとある\(c\in(a,b)\)で\(f(c)\)は最大値もしくは最小値をとる。
+        したがって\(f'(c)=0\)となる。
+        これでロルの定理が証明された。
+    </p>
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/style.css">
+<script type="text/javascript" src="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/config.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<title>2階微分による判定</title>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NW2C5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NW2C5Z');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<h1>2階微分による判定</h1>
+
+<div class="intro">
+    <p>
+        微分係数が\(0\)になることは極値を持つための必要条件であって、十分条件ではなかった。
+        関数が\(2\)階微分できる場合には、その情報によって極値を持つ十分条件を記述することができる。
+    </p>    
+</div>
+
+<div class="section">
+    <div class="section-title">微分係数と極値</div>
+    <p>
+        \(f'(a)=0\)であることは、極値をもつための必要条件であった。
+        ただしこれだけでは極大なのか極小なのか、あるいは極値を持たないのかは判断できない。
+        つまり、\(f'(a)=0\)であっても\(f(a)\)が極大値であることも、極小値であることも、
+        いずれでもない可能性がある。
+    </p>
+    
+    <p>
+        これをさらに精密にするために二階の微分を計算する。
+        \(f\)が\(2\)階微分できる場合、さらに\(f''(a)\)を調べる。
+        これの符号によって極値を判定できる。
+        これは二次関数で近似することに相当する。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">2階微分による極値の判定</div>
+    <p>
+        \(f'(a)=0\)であるとき、さらに\(f''(a)&gt;0\)ならば\(f\)は\(a\)で極小値を持つ。
+        \(f''(a)&lt;0\)ならば\(f\)は\(a\)で極大値を持つ。
+    </p>
+    
+    <p>
+        大小が反対なので分かりづらいが、二次関数をイメージすれば少しは分かりやすい。
+        \(y=cx^2\)という二次関数は、\(c&gt;0\)ならば下に凸で、\(c&lt;0\)ならば上に凸である。
+    </p>
+    
+    <p>
+        \(f''(a)=0\)である場合には、極大値を持つ場合も極小値を持つ場合も、
+        いずれでもない場合もありうることに注意。
+    </p>
+</div>
+
+
+<div class="example">
+    <p>
+        \(f(x)=x^3-3x\)とする。
+        \(f'(x)=3x^2-2=3(x-1)(x+1)\)であり、\(f''(x)=6x\)である。
+    </p>
+    <p>
+        微分係数が\(0\)になる点は\(f'(x)=0\)を解いて\(x=1\)と\(x=-1\)である。
+    </p>
+    <p>
+        \(f''(x)=6x\)であるから、\(x=1\)では\(f''(1)=6&gt;0\)であり、\(x=-1\)では\(f''(-1)=-6&lt;0\)である。
+        よって、\(x=1\)で極小値を持ち、\(x=-1\)で極大値を持つことがわかる。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        \(f(x)=3x^4-4x^3\)とする。
+        \(f'(x)=12x^3-12x^2=12x^2(x-1)\)であり、\(f''(x)=36x^2-24x\)である。    
+    </p>
+    <p>
+        微分係数が\(0\)になる点は\(f'(x)=0\)を解いて\(x=0\)と\(x=1\)である。
+    </p>
+    <p>
+        \(f''(x)=36x^2-24x\)であるから、\(x=0\)では\(f''(0)=0\)であり、\(x=1\)では\(f''(1)=12&gt;0\)である。
+        よって、\(x=1\)では極小値を持つことがわかる。
+        一方で$x=0$でどうなるかはこれだけからはわからない。
+    </p>
+    <p>
+        実際に関数の増減を詳しく調べると、\(x=0\)の周りでは\(x&lt;0\)で\(f'(x)&lt;0\)であるから\(f\)は減少している。
+        \(0&lt;x&lt;1\)で\(f'(x)&lt;0\)であるから\(f\)は減少している。
+        よって、\(x=0\)では極値をもたないことがわかる。
+    </p>
+</div>
+
+<div class="summary">
+    <p>
+        \(f\)が\(2\)階微分できる場合、\(f'(a)=0\)であるとき、
+        \(f''(a)&gt;0\)ならば\(f\)は\(a\)で極小値を持つ。
+        \(f''(a)&lt;0\)ならば\(f\)は\(a\)で極大値を持つ。
+    </p>
+    <p>
+        また、\(f''(a)=0\)である場合には、極大値を持つ場合も極小値を持つ場合も、
+        いずれでもない場合もありうることに注意。
+    </p>
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/style.css">
+<script type="text/javascript" src="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/config.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<title>関数の凸性と変曲点</title>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NW2C5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NW2C5Z');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<h1>関数の凸性と変曲点</h1>
+
+<div class="intro">
+    <p>
+        この節では、関数の凸性と変曲点について学ぶ。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">関数の凸性</div>
+    <p>
+        関数\(f\)が区間\(I\)で下に凸であるとは、
+        すべての\(I\)の点\(a, b\)と、\(0\lt t\lt1\)に対し、
+        \[
+        f((1-t)a+tb) \leq (1-t)f(a) + tf(b)
+        \]
+        が成り立つこと。    
+    </p>
+    <p>
+        この不等式は、\((a,f(a))\)と\((b,f(b))\)を結ぶ線分が
+        曲線\(y=f(x)\)の上側にあることを表している。
+    </p>
+    <p>
+        関数\(f\)が区間\(I\)で上に凸であるとは、
+        すべての\(I\)の点\(a, b\)と、\(0\lt t\lt1\)に対し、
+        \[
+        f((1-t)a+tb) \geq (1-t)f(a) + tf(b)
+        \]
+        が成り立つこと。    
+    </p>
+    <p>
+        この不等式は、\((a,f(a))\)と\((b,f(b))\)を結ぶ線分が
+        曲線\(y=f(x)\)の下側にあることを表している。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">微分係数と凸性</div>
+    <p>
+        関数\(f\)が区間\(I\)で\(2\)階微分可能であるとする。
+        \(x\in I\)で\(f''(x)\geq 0\)ならば\(f\)は区間\(I\)で下に凸である。
+        \(x\in I\)で\(f''(x)\leq 0\)ならば\(f\)は区間\(I\)で上に凸である。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        \(f(x)=\exp(-x^2)=e^{-x^2}\)の凸性を調べよう。
+        \(f'(x)=-2x\exp(-x^2)\)であり、
+        \(f''(x)=-2\exp(-x^2)+4x^2\exp(-x^2)=(4x^2-2)\exp(-x^2)\)となる。    
+    </p>
+    <p>
+        \(f''(x)\gt0\)となる必要十分条件は\(x^2\gt\dfrac{1}{2}\)のときであり、
+        これは\(x\gt\dfrac{1}{\sqrt{2}}\)または\(x\lt-\dfrac{1}{\sqrt{2}}\)のときである。
+    </p>
+    <p>
+        よって、\(f\)は\(-\dfrac{1}{\sqrt{2}}\lt x\lt\dfrac{1}{\sqrt{2}}\)で上に凸であり、
+        \(x\lt-\dfrac{1}{\sqrt{2}}\)または\(x\gt\dfrac{1}{\sqrt{2}}\)で下に凸である。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">変曲点</div>
+    <p>
+        上の例のように、ある点の左右で関数の凸性が入れ替わることがある。
+        このように、グラフが上に凸と下に凸が入れ替わる点を変曲点という。
+        これは接線が曲線の上にあるか、下にあるか、交わるかの違いと対応している。        
+    </p>    
+    <p>
+        \(f\)が\(a\)で変曲点ならば\(f''(a)=0\)である。
+    </p>
+    <p>
+        逆は言えないことに注意する。
+        実は\(f''(a)=0\)で\(f'''(a)\neq0\)のとき、\(x=a\)は変曲点。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        \(f(x)=\exp(-x^2)\)の変曲点は\(x=\pm\dfrac{2}{\sqrt{2}}\)である。
+        まず2階微分は\(f''(x)=(4x^2-2)\exp(-x^2)\)である。
+        これが\(0\)になるのは、\(4x^2-2=0\)のときである。
+        これが必要条件。    
+    </p>
+    <p>
+        実際にこれらの点が変曲点であるかどうかは、その左右で\(f''(x)\)の符号が変わるかどうかを調べる。
+        \(x\lt-\dfrac{1}{\sqrt{2}}\)では\(f''(x)\lt0\)であり、
+        \(x\gt\dfrac{1}{\sqrt{2}}\)では\(f''(x)\gt0\)である。
+        よって、\(x=-\dfrac{1}{\sqrt{2}}\)は変曲点である。        
+    </p>
+    <p>
+        あるいは\(f'''(x)\)を計算して判定することもできる。
+        今の場合、\(f'''(x)=8x\exp(-x^2)\)であり、\(x=\pm\dfrac{1}{\sqrt{2}}\)ではいずれも\(f'''(x)\neq0\)である。
+        よって、\(x=\pm\dfrac{1}{\sqrt{2}}\)は変曲点である。
+    </p>
+</div>
+
+<div class="summary">
+    <p>
+        関数のグラフにおいて、上に凸の部分は2階微分が負、下に凸の部分は2階微分が正となる。
+        グラフの形状が上に凸から下に凸、あるいは下に凸から上に凸へと入れ替わる点を変曲点という。
+        変曲点であるための必要条件は$f''(a)=0$であるが、十分条件ではない。
+    </p>
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/style.css">
+<script type="text/javascript" src="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/config.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<title>ニュートン法</title>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NW2C5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NW2C5Z');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<h1>ニュートン法</h1>
+
+<div class="intro">
+    <p>
+        ニュートン法とは、\(f(x)=0\)という「方程式」を近似的にとく手法である。
+        解の近似値を微分を利用して求める。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">ニュートン法の基本</div>
+    <p>
+        \(x=c\)で\(f(x)=0\)となるとする。
+        この\(c\)を近似的に求めることが目標。
+    </p>
+    <p>
+        初期値\(a\)を適当にとる。
+        \((a,f(a))\)が関数のグラフ上の点とする。
+        ここでは、\(f(a)&gt;0\)であると仮定し、さらに\(f\)が下に凸な関数であると仮定する。
+    </p>
+    <p>
+        \(a\)での接線を引くと、\(x\)軸と交わる点が\(a\)と解の間にあることがわかる。
+        これは下に凸な関数であるという条件を使っている。
+    </p>
+    <p>
+        この\(x\)軸との交点を改めて\(a\)だと思って、同じように接線を引く。
+        これを繰り返すと\(a\)が\(c\)に近づいていく。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">ニュートン法の更新式</div>
+    <p>
+        上の手続きで、各ステップごとの\(a\)を改めて\(a_1, a_2, \ldots\)とする。
+        \(a_n\)から\(a_{n+1}\)を求める手続きは次のようになる。
+    </p>
+    <p>
+        まず、\((a_n, f(a_n))\)における接線の式は
+        \[
+            y=f'(a_n)(x-a_n)+f(a_n)
+        \]
+        となる。
+    </p>
+    <p>
+        これと\(x\)軸の交点は
+        \[
+            0=f'(a_n)(x-a_n)+f(a_n)
+        \]
+        を解いて、
+        \[
+            x=a_n-\frac{f(a_n)}{f'(a_n)}
+        \]
+        となる。
+        これが\(a_{n+1}\)である。
+    </p>
+    <p>
+        つまり、
+        \[
+            a_{n+1}=a_n-\frac{f(a_n)}{f'(a_n)}
+        \]
+        という式にしたがって、\(a_n\)を更新していく。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        \(f(x)=x^2-2\)とする。
+        \(f(x)=0\)の解をニュートン法で求める。
+        つまり、\(\sqrt{2}, -\sqrt{2}\)を近似的に求めるということ。    
+    </p>
+    <p>
+        \(f'(x)=2x\)である。
+        なので、ニュートン法の各ステップは
+        \[
+            a_{n+1}=a_n-\frac{a_n^2-2}{2a_n} = \frac{a_n}{2}+\frac{1}{a_n}
+        \]
+        となる。    
+    </p>
+    <p>
+        例えば\(a_1=2\)とすると、\(a_2=1.5, a_3=1.4166\cdots\)となる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">ニュートン法の収束性</div>
+    <p>
+        解に収束することは大雑把にいうと次のようにわかる。
+        まず、\(c \leq a_0\)という前提で、\(c \leq x \leq a_0\)で\(f(x)\)が非負かつ下に凸であるとしよう。
+        \(f\)が下に凸であるという条件から、接線はグラフの下にあることがわかる。
+        すると、接線と\(x\)軸の交点は\(c\)と\(a_0\)の間にあることがわかる。
+        つまり、\( c \leq a_1 \leq a_0 \)である。
+        これを繰り返すと、
+        \[
+            c \leq \cdots \leq a_{n+1} \leq a_n \leq a_{n-1} \leq \cdots \leq a_1 \leq a_0
+        \]
+        となる。
+    </p>
+    <p>
+        実数の重要な性質として、上の\(a_n\)の列のように、単調減少であり下に有界な数列は収束する。
+        極限\(\alpha\)の存在が保証されていることから、更新式の両辺の極限を取ると、
+        \[
+        \lim_{n\to\infty}a_{n+1}=\lim_{n\to\infty}\left(a_n-\frac{f(a_n)}{f'(a_n)}\right)
+        \]
+        となり、\(f, f'\)の連続性を仮定すると
+        \[
+        \alpha=\alpha-\frac{f(\alpha)}{f'(\alpha)}
+        \]
+        となり、\(f(\alpha)=0\)であることがわかる。
+    </p>
+    <p>
+        解が複数ある場合には、初期値によって収束先が異なることもある。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">ニュートン法の応用</div>
+    <p>
+        \(f\)そのものではなく、\(f'\)に対してニュートン法を用いれば、
+        \(f\)がいつ最大を持つか、最小を持つかの手がかりも得られる。
+        統計や機械学習でもこのような考え方が用いられる。
+    </p>
+</div>
+
+<div class="summary">
+    <p>
+        ニュートン法は、方程式\(f(x)=0\)の解を数値的に求める方法である。
+        関数\(f\)の接線と\(x\)軸の交点を繰り返し計算することで、解に収束する。
+        初期値の選び方によって収束先が異なる場合がある。
+        また、\(f'\)に対してニュートン法を適用することで、関数の最大値や最小値を求めることもできる。
+    </p>
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/style.css">
+<script type="text/javascript" src="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/config.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<title>ロピタルの定理</title>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NW2C5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NW2C5Z');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<h1>ロピタルの定理</h1>
+
+<div class="intro">
+    <p>
+        今回は、不定形の極限を計算するためのロピタルの定理を学ぶ。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">ロピタルの定理</div>
+    <p>
+        \(\lim_{x\to a}\dfrac{f(x)}{g(x)}\)と\(\lim_{x\to a}\dfrac{f'(x)}{g'(x)}\)を比較する。
+    </p>
+    
+    <p>
+        \(\lim_{x\to a}f(x)=0\)かつ\(\lim_{x\to a}g(x)=0\)とする。
+        さらに、\(x=a\)の近傍で\(g'(x)\neq 0\)とする。
+        このとき、
+        \(\lim_{x\to a}\dfrac{f'(x)}{g'(x)}=0\)ならば、\(\lim_{x\to a}\dfrac{f(x)}{g(x)}=0\)である。
+    </p>
+    
+    <p>
+        上は比の極限が\(0\)でなくてもよく、以下が成り立つ。
+        \(\lim_{x\to a}f(x)=0\)かつ\(\lim_{x\to a}g(x)=0\)とする。
+        さらに、\(x=a\)の近傍で\(g'(x)\neq 0\)とする。
+        このとき、
+        \(\lim_{x\to a}\dfrac{f'(x)}{g'(x)}\)が存在するならば、
+        \[
+        \lim_{x\to a}\dfrac{f(x)}{g(x)} = \lim_{x\to a}\dfrac{f'(x)}{g'(x)}
+        \]
+        である。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">証明の概略</div>
+    <p>
+        比が\(0\)に収束するとは、\(f, g\)ともに\(x\to a\)で\(0\)に近づくが、
+        その近づき方がより速いのが\(g\)であるということ。
+    </p>
+    
+    <p>
+        \[
+        -c \lt \frac{f'(x)}{g'(x)} \lt c
+        \]
+        という状況で何が言えるのかを考える。
+    </p>
+    
+    <p>
+        仮に\(\lim_{x\to a}\dfrac{f'(x)}{g'(x)}=c\)とする。
+        このとき、
+        \[
+        -c \lt \frac{f'(x)}{g'(x)} \lt c
+        \]
+        となる。
+    </p>
+    
+    <p>
+        このとき、上の不等式は
+        \[
+        -c \times g'(x) \lt f'(x) \lt c \times g'(x)
+        \]
+        と同値である。
+    </p>
+    
+    <p>
+        さらにこのうちの右側の不等式は
+        \[
+        f'(x) - c \times g'(x) \lt 0
+        \]
+        と同値である。
+    </p>
+    
+    <p>
+        これは\(f(x)-cg(x)\)が減少しているということであり、
+        \(x\to a\)のとき\(f(x)-cg(x)\to 0\)であることから、
+        特に、\(a \lt x\)において、\(f(x)-cg(x)\lt0\)である。
+        つまり、
+        \[
+        f(x) \lt cg(x)
+        \]
+        であり、
+        \[
+        \frac{f(x)}{g(x)} \lt c
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">一次近似による理解</div>
+    <p>
+        関数\(f(x), g(x)\)が\(x=a\)で定義され、\(f(a)=g(a)=0\)とする。
+        これらを\(x=a\)の近傍で一次近似すると
+        \[
+        f(x) \sim f(a) + f'(a)(x-a) \\
+        g(x) \sim g(a) + g'(a)(x-a)
+        \]
+        となる。
+    </p>
+    <p>
+        これを用いて比の極限を計算すると
+        \[
+        \lim_{x\to a}\frac{f(x)}{g(x)} = \lim_{x\to a}\frac{f(a) + f'(a)(x-a)}{g(a) + g'(a)(x-a)} = \frac{f'(a)}{g'(a)}
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        \[
+        \lim_{x\to 0}\frac{\sin^2 x}{1-\cos^2x}
+        \]
+        を計算する。
+        分子分母ともに\(x=0\)で\(0\)になるので、ロピタルの定理を用いると
+        \[
+        \lim_{x\to 0}\frac{\sin^2 x}{1-\cos^2x} = \lim_{x\to 0}\frac{2\sin x\cos x}{2\cos x\sin x} = 1
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="summary">
+    <p>
+        今回は、ロピタルの定理を用いて不定形の極限を計算する方法を学んだ。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">おまけ</div>
+    <p>
+        ロピタルの定理を証明する。
+        まず準備として、コーシーの平均値の定理を証明する。
+        関数\(f, g\)が\([a,b]\)で連続、\((a,b)\)で微分可能とする。
+        \(g(a)\neq g(b)\)であり、かつ\(g'(x)\neq 0\)であるとする。
+        このとき、
+        \[
+        \frac{f(b)-f(a)}{g(b)-g(a)} = \frac{f'(c)}{g'(c)}
+        \]
+        となる\(c\)が\((a,b)\)内に存在する。
+    </p>
+    <p>
+        証明は以下の通り。
+        関数\(h(x)=f(x)-f(a)-\frac{f(b)-f(a)}{g(b)-g(a)}(g(x)-g(a))\)を考える。
+        このとき、\(h(a)=h(b)=0\)である。
+        また、\(h(x)\)は\([a,b]\)で連続、\((a,b)\)で微分可能である。
+    </p>
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/style.css">
+<script type="text/javascript" src="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/config.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<title>はじめに</title>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NW2C5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NW2C5Z');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<h1>はじめに</h1>
+
+<div class="intro">
+    <p>
+        本講義では、関数の近似とテイラー展開について学ぶ。
+        一次関数による近似から始まり、二次関数、高次関数による近似、テイラーの定理、ランダウの記号、漸近展開、不定形の極限について解説する。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">2次関数による近似</div>
+    <p>
+        関数を一次関数で近似する考え方が微分係数や導関数の基礎となっている。
+        その近似の精度を上げることにより、関数の局所的な振る舞いをより正確に捉えることができる。
+    </p>
+    <p>
+        関数\(f\)を点\(a\)の周りで直線で近似する場合、接線が最も関数に近い直線となる。
+        点\(a\)から\(h\)だけずれた点での関数値\(f(a+h)\)は、次のように一次式で近似できる：
+        \[
+        f(a+h) \sim f(a) + f'(a)h
+        \]
+    </p>
+    <p>
+        関数を二次関数で近似する場合、次の条件を満たす二次関数を考える：
+        \[
+        \lim_{h \to 0} \frac{f(a+h) - (f(a) + f'(a)h + Ah^2)}{h^2} = 0
+        \]
+        このとき、\(A\)は
+        \[
+        A=\frac{1}{2}f''(a)
+        \]
+        となり、
+        \[
+        f(a+h) \sim f(a) + f'(a)h + \frac{1}{2}f''(a)h^2
+        \]
+        と近似できる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">テイラーの定理</div>
+    <p>
+        関数\(f(x)\)と正の整数\(n\)に対して
+        \[
+        p_n(x)=f(a)+f'(a)(x-a)+\frac{1}{2!}f''(a)(x-a)^2+\cdots+\frac{1}{n!}f^{(n)}(a)(x-a)^n
+        \]
+        と定める。
+    </p>
+    <p>
+        \(f\)が\(x=a\)のまわりで\(n\)階微分できるとき、
+        \[
+        \lim_{x\to a}\frac{f(x)-p_n(x)}{(x-a)^n}=0
+        \]
+        となる。
+    </p>
+    <p>
+        さらに、この誤差について、
+        \[
+        f(x)=f(a)+(x-a)f'(a)+\frac{1}{2}(x-a)^2f^{(2)}(a)+\cdots+\frac{1}{n!}(x-a)^nf^{(n)}+R_n
+        \]
+        となる。ただし\(R_n\)は剰余項と呼ばれ、ある\(a\lt c\lt x\)が存在して
+        \[
+        R_n=\frac{1}{(n+1)!}f^{(n+1)}(c)(x-a)^{n+1}
+        \]
+        と書くことができる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">ランダウの記号</div>
+    <p>
+        二つの関数がともに\(x\to a\)のときに\(0\)に近づくとき、どちらがより早く\(0\)に近づくかを表現する記号として、ランダウの記号を導入する。
+    </p>
+    <p>
+        \(x=a\)の近傍で定義された関数\(f(x), g(x)\)について、
+        \[
+        \lim_{x\to a}\frac{f(x)}{g(x)}=0
+        \]
+        が成り立つことを
+        \[
+        f(x)=o(g(x)), x\to a
+        \]
+        と表す。
+    </p>
+    <p>
+        ランダウの記号を用いた計算の基本的な性質：
+    </p>
+    <ul>
+        <li>\(o(x^n)\cdot o(x^m)=o(x^{n+m})\)</li>
+        <li>\(x^n \cdot o(x^m) = o(x^{n+m})\)</li>
+        <li>\(n \leq m\)のとき、\(o(x^n) + o(x^m) = o(x^n)\)</li>
+    </ul>
+</div>
+
+<div class="section">
+    <div class="section-title">漸近展開</div>
+    <p>
+        関数の漸近展開とは、ある点の周りで関数を多項式で近似する方法である。
+        テイラーの定理を用いて、関数の導関数の値を用いて漸近展開を求めることができる。
+    </p>
+    <p>
+        十分に微分可能な関数\(f\)を\(x\)の\(n\)次式で近似する場合、次の多項式が最良の近似を与える：
+        \[
+        f(x) = f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \cdots + \frac{f^{(n)}(0)}{n!}x^n + o(x^n)
+        \]
+    </p>
+    <p>
+        基本的な関数の漸近展開：
+    </p>
+    <ul>
+        <li>指数関数：\(\exp(x) = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots + o(x^n)\)</li>
+        <li>三角関数：\(\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots + o(x^n)\)</li>
+        <li>対数関数：\(\log(1+x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots + o(x^n)\)</li>
+    </ul>
+</div>
+
+<div class="summary">
+    <p>
+        関数の近似とテイラー展開、ランダウの記号、漸近展開について学ぶ。
+    </p>
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/style.css">
+<script type="text/javascript" src="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/config.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<title>2次関数による近似</title>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NW2C5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NW2C5Z');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<h1>2次関数による近似</h1>
+
+<div class="intro">
+    <p>
+        今回は、関数を二次関数によって近似する方法について考える。
+        これまで学んだように、関数 \(f\) を一次関数で近似する考え方が微分係数や導関数の基礎となっている。
+        その近似の精度を上げることにより、関数の局所的な振る舞いをより正確に捉えることができる。
+    </p>
+    <p>
+        これまでの議論では、関数の増減や極値などの情報を得るために、1階導関数だけでなく2階導関数も考慮してきた。
+        ここでは、一次関数ではなく二次関数による近似、さらには高次の関数による近似について検討する。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">関数の一次近似</div>
+    <p>
+        微分係数の定義は極限を用いて次のように与えられる。
+        \[
+        \lim_{h \to 0} \frac{f(a+h) - f(a)}{h} = f'(a)
+        \]
+        これは点 \((a, f(a))\) における接線の傾きを表している。
+        関数 \(f\) を点 \(a\) の周りで直線で近似する場合、この接線が最も関数に近い直線となる。
+    </p>
+    
+    <p>
+        近似という観点から見ると、点 \(a\) から \(h\) だけずれた点での関数値 \(f(a+h)\) は、次のように一次式で近似できる。
+        \[
+        f(a+h) \sim f(a) + f'(a)h
+        \]
+    </p>
+    <p>
+        これを変形すると、次のようになる。
+        \[
+        \lim_{h \to 0} \frac{f(a+h) - f(a) - f'(a)h}{h} = 0
+        \]
+        これは、関数 \(f(a+h)\) と一次近似 \(f(a) + f'(a)h\) の差を \(h\) で割った極限が0になることを意味する。
+        言い換えれば、この差は \(h\) よりも速く0に近づくということである。
+    </p>
+    
+    <p>
+        点 \(a\) を通る様々な直線を考えた場合、どの直線でも \(f(a+h) - (f(a) + mh)\) は \(h = 0\) のとき0になる。
+        しかし、接線の特徴は、この差を \(h\) で割っても極限が0になることである。
+    </p>
+    <p>
+        関数 \(f\) の一次式 \(ax+b\) による近似のうちは最もよいもの何か？
+        という問いに対する答えが微分係数である。
+        つまり、
+        \[
+        \lim_{h \to 0} \frac{f(a+h) - (f(a) + Ah)}{h} = 0
+        \]    
+        となるような\(A\)は存在するとしたらどのようなものであるか？というと、
+        \[
+        A = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}
+        \]
+        であり、これこそが微分係数の定義であった。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">関数の二次近似</div>
+    <p>
+        関数を二次関数で近似することを考える。
+        つまり、点 \(a\) の周りで関数 \(f\) に最も近い放物線を求めたい。
+    </p>
+    <p>
+        一次近似の考え方を拡張して、二次近似は次の条件を満たす二次関数としてする。
+        \[
+        \lim_{h \to 0} \frac{f(a+h) - (f(a) + f'(a)h + Ah^2)}{h^2} = 0
+        \]
+        この条件は、関数 \(f\) と二次近似の差を \(h^2\) で割っても極限が0になることを要求している。
+        この係数\(A\)は、結果としては\(f''(a)\)を用いて表すことができる。
+    </p>
+</div>
+
+<div class="example">
+    
+    <p>
+        関数 \(f(x) = \cos x\) を \(x = 0\) の周りで二次関数で近似することを考える。
+        一次近似は、定数関数\(1\) となる。
+    </p>
+    
+    <p>
+        二次近似を求めるために、次の形の二次関数を考える。
+        \[
+        P_2(x) = a_0 + a_1x + a_2x^2
+        \]
+        この二次関数が \(\cos x\) の最良の二次近似となるためには、次の条件を満たす必要がある。
+        \[
+        \lim_{x \to 0} \frac{\cos x - (a_0 + a_1x + a_2x^2)}{x^2} = 0
+        \]
+    </p>
+    
+    <p>
+        この極限を直接求める代わりに、ロピタルの定理を用いる。
+        分子と分母がともに \(x = 0\) で0になるようにするため、まず \(a_0 = 1\) とする。
+        これにより、極限は次のように書き換えられる。
+        \[
+        \lim_{x \to 0} \frac{\cos x - (1 + a_1x + a_2x^2)}{x^2} = 0
+        \]
+        この分子と分母はともに\(x\to0\)で0になる。
+    </p>
+    <p>
+        ロピタルの定理を使うと、
+        \[
+        \lim_{x \to 0} \frac{\cos x - (1 + a_1x + a_2x^2)}{x^2}
+        =
+        \lim_{x \to 0} \frac{-\sin x - (a_1+2a_2x)}{2x}
+        \]
+        となる。
+        これは\(-\sin x\)の一次近似であり、\(a_1 = 0, a_2 = -\dfrac{1}{2}\) が得られる。
+    </p>
+    
+    <p>
+        したがって、\(\cos x\) の \(x = 0\) 周りでの二次近似は次のようになる。
+        \[
+        \cos x \sim 1 - \frac{1}{2}x^2
+        \]
+    </p>
+</div>
+
+<div class="summary">
+    <p>
+        関数の二次近似の考え方について説明した。
+        関数\(f(x)\)に対し二次関数\(P_2(x)=a_0+a_1x+a_2x^2\)であって、
+        \[
+        \lim_{x \to 0} \frac{f(x) - P_2(x)}{x^2} = 0
+        \]
+        を満たすものを二次近似と呼ぶ。
+    </p>
+    <p>
+        ロピタルの定理を用いることにより、これを一次近似の議論に帰着することができる。
+    </p>
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/style.css">
+<script type="text/javascript" src="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/config.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<title>テイラーの定理</title>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NW2C5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NW2C5Z');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<h1>テイラーの定理</h1>
+
+<div class="intro">
+    <p>
+        微分とは複雑な関数を一次関数で近似することであった。
+        あるいは曲線を直線で近似することであった。
+        一次関数ではなく、二次関数や三次関数を用いることで、
+        より精度の高い近似を行う。
+    </p>    
+</div>
+
+<div class="section">
+    <div class="section-title">関数の二次近似</div>
+    <p>
+        \[
+        f'(x) \sim f'(a) + f''(a)(x-a)
+        \]
+        となることを用いて
+        \[
+        f(x) \sim f(a) + f'(a)(x-a) + \frac{1}{2}f''(a)(x-a)^2
+        \]
+        という二次近似の式を導いた。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">$n$次近似</div>
+    <p>
+        関数\(f(x)\)と正の整数\(n\)に対して
+        \[
+        p_n(x)=f(a)+f'(a)(x-a)+\frac{1}{2!}f''(a)(x-a)^2+\cdots+\frac{1}{n!}f^{(n)}(a)(x-a)^n
+        \]
+        と定める。
+    </p>
+    <p>
+        \(f\)が\(x=a\)のまわりで\(n\)階微分できるとき、
+        \[
+        \lim_{x\to a}\frac{f(x)-p_n(x)}{(x-a)^n}=0
+        \]
+        となる。
+    </p>
+    <p>
+        さらに、この誤差について、
+        \[
+        \frac{f(x)-p_n(x)}{(x-a)^n}=\frac{1}{(n+1)!}f^{(n+1)}(c)
+        \]
+        となる\(c\)が存在する。
+        これを剰余項と呼ぶ。
+        これによって誤差の大きさを評価することができる。
+    </p>
+    <p>
+        \(f(x)\)が\(x=a\)で\(n\)階微分可能であるとする。このとき、
+        \[
+        f(x)=f(a)+(x-a)f'(a)+\frac{1}{2}(x-a)^2f^{(2)}(a)+\frac{1}{3!}(x-a)^3f^{(3)}+\cdots \\
+        +\frac{1}{n!}(x-a)^nf^{(n)}+R_n
+        \]
+        となる。
+        
+        ただし\(R_n\)は剰余項と呼ばれ、ある\(a\lt c\lt x\)が存在して
+        \[
+        R_n=\frac{1}{(n+1)!}f^{(n+1)}(c)(x-a)^{n+1}
+        \]
+        と書くことができる。        
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        指数関数\(f(x)=e^x\)の\(x=0\)のまわりでの近似を考えよう。
+    </p>
+    <p>
+        この関数の導関数は\(f^{(n)}(x)=e^x\)である。
+    </p>
+    <p>
+        よって、\(x=0\)のまわりでの近似は、ある\(0 \lt c \lt x\)について、
+        \[
+        f(x) = 1+x+\frac{1}{2}x^2+\cdots+\frac{1}{n!}x^n+\frac{1}{(n+1)!}e^cx^{n+1}
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        \[
+        f(x)=\sqrt{1+x}
+        \]
+        について考えよう。
+    </p>
+    <p>
+        この関数の導関数は
+        \[
+        f'(x)=\frac{1}{2\sqrt{1+x}} \\
+        f''(x)=-\frac{1}{4(1+x)^{3/2}} \\
+        f'''(x)=\frac{3}{8(1+x)^{5/2}}
+        \]
+        と計算できる。    
+    </p>
+    <p>
+        \(x=0\)での一次近似は
+        \[
+        f(x)\sim f(0)+f'(0)x=1+\frac{1}{2}x
+        \]
+        であり、例えば
+        \[
+        \sqrt{1.1} \sim 1+\frac{1}{2}\times0.1=1.05
+        \]
+        と近似できる。    
+    </p>
+    <p>
+        剰余項を用いると
+        \[
+        f(x) = f(0)+f'(0)x+\frac{1}{2}f''(c)x^2
+        \]
+        であり、
+        \[
+        \sqrt{1.1} = 1+\frac{1}{2}\times0.1+\frac{1}{2}\times\frac{1}{4}\times\frac{1}{(1+c)^{3/2}}\times0.1^2
+        \]
+        となる。\(c\)は\(0\)と\(0.1\)の間の値である。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        \(f(x)=\sin x\)の\(x=0\)のまわりでの近似を考えよう。
+    </p>
+    <p>
+        \(3\)次までの近似を行うと、
+        \[
+        \sin x \sim x-\frac{1}{6}x^3
+        \]
+        となる。
+    </p>
+    <p>
+        さらに剰余項を用いると
+        \[
+        \sin x = x-\frac{1}{6}x^3-\frac{1}{24}\cos c x^4
+        \]
+        となる。
+    </p>
+    <p>
+        \(x=0.1\)であれば、\(0\leq c\leq 0.1\)であり、\(\cos c\leq 1\)である。
+        よって、
+        \[
+        \sin 0.1 \geq 0.1-\frac{1}{6}\times0.1^3-\frac{1}{24}\times1\times0.1^4
+        \]
+        となり、おおよそ\(10^{-5}\)程度の誤差で\(\sin 0.1 \sim 0.09983333333\)と見積もることができる。
+    </p>
+</div>
+
+<div class="summary">
+    <p>
+        テイラーの定理により、関数を多項式で近似することができる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">おまけ：テイラーの定理の証明</div>
+    <p>
+        \(a, x\)を固定して、\(t\)の関数
+        \[
+        g(t) = f(x) - \sum_{k=0}^n\frac{f^{(k)}(t)}{k!}(x-t)^k - \frac{A}{(n+1)!}(x-t)^{n+1}
+        \]
+        とする。
+        ここで、定数\(A\)は
+        \[
+        A = \frac{(n+1)!}{(x-a)^{n+1}}\left(f(x)-\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k\right)
+        \]
+        である。
+        このように定めると、\(g(x)=g(a)=0\)となる。
+    </p>
+    <p>
+        ロルの定理より、\(g'(c)=0\)となる\(a\lt c\lt x\)または\(x\lt c\lt a\)が存在する。
+    </p>
+    <p>
+        \[
+        g'(t)
+        =
+        -\sum_{k=0}^n\frac{f^{(k+1)}(t)}{k!}(x-t)^k + \sum_{k=1}^n\frac{f^{(k)}(t)}{(k-1)!}(x-t)^{k-1} + \frac{A}{n!}(x-t)^n \\
+        =
+        -\frac{f^{(n+1)}(t)}{n!}(x-t)^n + \frac{A}{n!}(x-t)^{n} \\
+        \]
+        となる。
+    </p>
+    <p>
+        よって、\(g'(c)0\)であることは、
+        \[
+        -\frac{f^{(n+1)}(c)}{n!}(x-c)^n + \frac{A}{n!}(x-c)^{n} = 0 \\
+        \]
+        となり、
+        \[
+        A = f^{(n+1)}(c)
+        \]
+        となる。
+        よって、
+        \[
+        f(x) = \sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k + \frac{f^{(n+1)}(c)}{n!}(x-a)^{n+1}
+        \]
+        である。
+    </p>
+</div>
+
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/style.css">
+<script type="text/javascript" src="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/config.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<title>ランダウの記号</title>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NW2C5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NW2C5Z');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<h1>ランダウの記号</h1>
+
+<div class="intro">
+    <p>
+        二つの関数がともに\(x\to a\)のときに\(0\)に近づくとき、どちらがより早く\(0\)に近づくかを表現したい。
+        \(g\) と \(f\) を比較したとき、\(f\) の方がより\(0\)に近い微小量であるということを意味する記号として、ランダウの記号を導入する。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">テイラーの定理</div>
+    <p>
+        テイラーの定理において、\(f(x)\)を近似する\(n\)次多項式を\(p_n(x)\)とする。
+        これが近似になっているというより正確な意味は、差を\((x-a)^n\)で割った極限が\(0\)になるということである。
+        \[
+        \lim_{x\to a}\frac{f(x)-p_n(x)}{(x-a)^n}=0
+        \]
+    </p>
+    <p>
+        このことを
+        \[
+        f(x)-p_n(x)=o((x-a)^n), x\to a
+        \]
+        と表す。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">ランダウの記号</div>
+    <p>
+        \(x=a\)の近傍で定義された関数\(f(x), g(x)\)について、
+        \[
+        \lim_{x\to a}\frac{f(x)}{g(x)}=0
+        \]
+        が成り立つことを
+        \[
+        f(x)=\omicron(g(x)), x\to a
+        \]
+        と表す。
+    </p>
+    <p>
+        \[
+        \lim_{x\to a}\frac{f(x)-p_n(x)}{(x-a)^n}=0
+        \]
+        であることを
+        \[
+        f(x)-p_n(x)=o((x-a)^n), x\to a
+        \]
+        と表す。
+    </p>
+    <p>
+        より一般に、
+        \[
+        f(x)=o(g(x)), x\to a
+        \]
+        とは、
+        \[
+        \lim_{x\to a}\frac{f(x)}{g(x)}=0
+        \]
+        であることを表す。
+    </p>
+    <p>
+        一般的には \(f\) と \(g\) はどのような関数でも構わないが、特に \(g\) が \(x\) の冪乗、あるいは \((x-a)\) の冪乗という形の場合がよく用いられる。
+        以下では、\(x\) が \(a\) に近づくときの極限を考察する。
+    </p>
+    <p>
+        \(o\)は関数の名前ではなく、極限の性質を表す記号である。
+        普通の等式とは少し扱いが異なるので注意が必要。
+    </p>
+    <p>
+        \(f(x)\)が\(g(x)\)より早く\(0\)に近づく、という気持ち。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        \[
+        f(x)=o(1), \quad x\to a
+        \]
+        は
+        \[
+        f(x)\to0, \quad x\to a
+        \]
+        と同値である。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        \(\log(x)\)と\(x^a\)と\(\exp(x)\)の比較。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        \[
+        x^2 = o(x), \quad x\to 0
+        \]
+        である。
+    </p>
+    <p>
+        実際、
+        \[
+        \lim_{x\to 0}\frac{x^2}{x} = \lim_{x\to 0}x = 0
+        \]
+        である。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        \[
+        x^3 = o(x^2), \quad x\to 0
+        \]
+        である。
+    </p>
+    <p>
+        実際、
+        \[
+        \lim_{x\to 0}\frac{x^3}{x^2} = \lim_{x\to 0}x = 0
+        \]
+        である。
+    </p>
+    <p>
+        また、
+        \[
+        x^3 = o(x), \quad x\to 0
+        \]
+        でもある。
+    </p>
+    <p>
+        なぜなら、
+        \[
+        \lim_{x\to 0}\frac{x^3}{x} = \lim_{x\to 0}x^2 = 0
+        \]
+        であるため。
+    </p>
+    <p>
+        このように、同じ関数\(f(x)\)について、さまざまな関数に対する\(o(g(x))\)との等式が成立する。
+    </p>
+</div>    
+
+<div class="example">
+    <p>
+        \[
+        \sin x = o(1), \quad x\to 0
+        \]
+        である。
+    </p>
+    <p>
+        実際、
+        \[
+        \lim_{x\to 0}\frac{\sin x}{1} = \lim_{x\to 0}\sin x = 0
+        \]
+        である。
+    </p>
+    <p>
+        また、
+        \[
+        \sin x - x = o(x), \quad x\to 0
+        \]
+        でもある。
+    </p>
+    <p>
+        実際、
+        \[
+        \lim_{x\to 0}\frac{\sin x - x}{x} = \lim_{x\to 0}\frac{\sin x}{x} - \lim_{x\to 0}\frac{x}{x} = 1 - 1 = 0
+        \]
+        である。
+    </p>
+    <p>
+        このことを
+        \[
+        \sin x = x + o(x), \quad x\to 0
+        \]
+        と表す。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">ランダウの記号と等式</div>
+    <p>
+        ランダウの記号を用いることの利点として、\(o(x)\) という記号があたかも一つの関数であるかのように式変形を行うことができる点が挙げられる。
+        これがランダウの記号のメリットである。
+    </p>
+    <p>
+        同じ関数であっても、\(\sin x\) を \(o(1)\) と表したり、\(x + o(x)\) という形に表したりすることができる。
+        逆に、同じ \(o(x)\) で表現されていても、\(\sin x - x\) と \(x^2\) は異なる関数である。
+        ランダウの記号で同じように表せたとしても、関数自体が同じになるわけではない。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">ランダウの記号を用いた計算</div>
+    <p>
+        ランダウの記号を用いた計算の基本的な性質を以下に示す。
+        以下は全て\(x\to 0\)のときの極限を考えている。
+    </p>
+    <p>
+        \[
+        o(x^n)\cdot o(x^m)=o(x^{n+m})
+        \]
+        が成り立つ。
+    </p>
+    <p>
+        これは、
+        \[
+        \frac{f(x)}{x^n} \to 0, \quad \frac{g(x)}{x^m} \to 0
+        \]
+        ならば、
+        \[
+        \frac{f(x) \cdot g(x)}{x^{n+m}} \to 0
+        \]
+        となることを言い換えたものである。
+    </p>
+    
+    <p>
+        また、
+        \[
+        x^n \cdot o(x^m) = o(x^{n+m})
+        \]
+        が成り立つ。
+        ただし、\(x^n\) 自体は \(o(x^n)\) ではないことに注意が必要である。
+        \(x^n\) を \(x^n\) で割ると \(1\) となり、その極限は \(0\) にならないためである。
+    </p>
+
+    <p>
+        これは、
+        \[
+        \frac{f(x)}{x^m} \to 0
+        \]
+        ならば、
+        \[
+        \frac{x^n \cdot f(x)}{x^{n+m}} \to 0
+        \]
+        となることを言い換えたものである。
+    </p>
+    
+    <p>
+        \(n \leq m\)のとき、
+        \[
+        o(x^n) + o(x^m) = o(x^n)
+        \]
+        が成り立つ。
+    </p>
+
+    <p>
+        これは、
+        \[
+        \frac{f(x)}{x^n} \to 0, \quad \frac{g(x)}{x^m} \to 0
+        \]
+        ならば、
+        \[
+        \frac{f(x) + g(x)}{x^m} = x^{m-n}\cdot\frac{f(x)}{x^n} + \frac{g(x)}{x^m} \to 0
+        \]
+        となることを言い換えたものである。
+    </p>
+</div>
+
+<div class="summary">
+    <p>
+        関数の漸近的な振る舞いを表現するための記号として、ランダウの記号を導入した。
+        ランダウの記号を用いることで、関数の漸近的な振る舞いを簡潔に表現することができる。
+    </p>
+    <p>
+        また、ランダウの記号を用いた計算の基本的な性質を学んだ。
+        ランダウの記号は慣れると非常に便利な道具となるため、様々な計算練習を通じて習熟することが望ましい。
+    </p>
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/style.css">
+<script type="text/javascript" src="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/config.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<title>漸近展開</title>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NW2C5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NW2C5Z');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<h1>漸近展開</h1>
+
+<div class="intro">
+    <p>
+        本節では、関数の漸近展開について説明する。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">関数のテイラー展開</div>
+        
+    <p>
+        前節までに学んだように、テイラーの定理により関数を多項式で近似することが可能である。
+    </p>
+    
+    <p>
+        まず、\(x = 0\) の周りでのテイラーの定理を復習する。
+        十分に微分可能な関数 \(f\) を \(x\) の \(n\) 次式で近似する場合、次の多項式が最良の近似を与える。
+        \[
+        f(x) = f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \cdots + \frac{f^{(n)}(0)}{n!}x^n + o(x^n)
+        \]
+    </p>
+    
+    <p>
+        ここで \(o(x^n)\) は、\(x \to 0\) のとき
+        \[
+        \frac{f(x) - (f(0) + f'(0)x + \cdots + \frac{f^{(n)}(0)}{n!}x^n)}{x^n} \to 0
+        \]
+        となることを意味する。
+        つまり、関数 \(f(x)\) と \(n\) 次の多項式近似の差を \(x^n\) で割った極限が0になるということである。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">指数関数の漸近展開</div>
+    
+    <p>
+        指数関数 \(f(x) = \exp(x)\) について考える。
+    </p>
+    
+    <p>
+        指数関数は微分しても \(\exp(x)\) のままであるため、何回でも微分可能であり、任意の次数のテイラー展開が可能である。
+        任意の正の整数\(n\)に対して、\(f^{(n)}(x) = \exp(x)\) であり、\(f^{(n)}(0) = \exp(0) = 1\) となる。
+    </p>
+    
+    <p>
+        したがって、指数関数の\(x=0\)周りの漸近展開は次のようになる。
+        \[
+        \exp(x) = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots + \frac{x^n}{n!} + o(x^n)
+        \]
+    </p>
+    
+    <p>
+        例えば、1次近似は \(\exp(x) = 1 + x + o(x)\)、2次近似は \(\exp(x) = 1 + x + \frac{x^2}{2} + o(x^2)\)、3次近似は \(\exp(x) = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + o(x^3)\) となる。
+    </p>
+    </div>
+
+
+<div class="section">
+    <div class="section-title">三角関数の漸近展開</div>
+    
+    <p>
+        三角関数 \(\sin x\) のテイラー展開を考える。
+        \(\sin x\) の導関数は以下のように周期的に変化する。
+        \[
+        \sin^{(1)}x = \cos x, \quad \sin^{(2)}x = -\sin x, \quad \sin^{(3)}x = -\cos x, \quad \sin^{(4)}x = \sin x, \ldots
+        \]
+    </p>
+
+    <p>
+        \(x = 0\) での各導関数の値を計算すると
+        \[
+        \sin^{(1)}(0) = \cos(0) = 1, \quad \sin^{(2)}(0) = -\sin(0) = 0, \\
+        \sin^{(3)}(0) = -\cos(0) = -1, \quad \sin^{(4)}(0) = \sin(0) = 0, \ldots
+        \]
+        となる。
+    </p>
+    
+    <p>
+        つまり、奇数回微分した値は \(1, -1, 1, -1, \ldots\) と交互に変化し、偶数回微分した値はすべて0となる。
+        したがって、\(\sin x\) の\(x=0\)周りの漸近展開は次のようになる。
+        \[
+        \sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots + o(x^n)
+        \]
+    </p>
+    
+    <p>
+        例えば、1次近似は \(\sin x = x + o(x)\)、3次近似は \(\sin x = x - \frac{x^3}{6} + o(x^3)\)、5次近似は \(\sin x = x - \frac{x^3}{6} + \frac{x^5}{120} + o(x^5)\) となる。
+    </p>
+</div>
+
+<div class="summary">
+    <p>
+        関数の漸近展開とは、ある点の周りで関数を多項式で近似する方法である。
+        テイラーの定理を用いて、関数の導関数の値を用いて漸近展開を求めることができる。
+        漸近展開は、関数の局所的な振る舞いを理解する上で重要な役割を果たす。
+    </p>
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/style.css">
+<script type="text/javascript" src="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/config.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<title>不定形の極限</title>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NW2C5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NW2C5Z');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<h1>不定形の極限</h1>
+
+<div class="intro">
+    <p>
+        本節では、不定形の極限を漸近展開を用いて計算する方法を学ぶ。
+        不定形の極限とは、例えば関数の比の極限で分子と分母が共に$0$に収束したり、$\infty$に発散するなど、
+        素朴に計算しようとすると \(\frac{0}{0}\) や \(\frac{\infty}{\infty}\) という形になる場合の極限を指す。
+    </p>
+</div>    
+
+<div class="example">
+    <p>
+        次の極限を計算しよう。
+        \[
+            \lim_{x \to 0} \frac{x - \sin x}{x^3}
+        \]
+    </p>
+
+    <p>
+        分母も分子も \(x \to 0\) のとき0に近づくため、そのままでは \(\frac{0}{0}\) という不定形になる。
+    </p>
+    
+    <p>
+        この極限を計算するために、\(\sin x\) の漸近展開を利用する。
+        \(\sin x\) は何回でも微分可能であり、高次の漸近展開も可能だが、分母が \(x^3\) であることに注目して、3次まで展開すれば十分である。
+    </p>
+    
+    <p>
+        \(\sin x\) の3次までの漸近展開は次のようになる。
+        \[\sin x = x - \frac{x^3}{6} + o(x^3)\]
+    </p>
+    
+    <p>
+        これを用いて分母を計算すると、
+        \[x - \sin x = x - \left(x - \frac{x^3}{6} + o(x^3)\right) = \frac{x^3}{6} - o(x^3)\]
+    </p>
+    
+    <p>
+        したがって、元の極限は次のように変形できる。
+        \[\lim_{x \to 0} \frac{x^3}{x - \sin x} = \lim_{x \to 0} \frac{x^3}{\frac{x^3}{6} - o(x^3)} = \lim_{x \to 0} \frac{1}{\frac{1}{6} - \frac{o(x^3)}{x^3}}\]
+    </p>
+    
+    <p>
+        ここで、ランダウの記号の定義により、\(\lim_{x \to 0} \frac{o(x^3)}{x^3} = 0\) であるため、極限は次のようになる。
+        \[\lim_{x \to 0} \frac{1}{\frac{1}{6} - 0} = \frac{1}{\frac{1}{6}} = 6\]
+    </p>
+    
+    <p>
+        したがって、
+        \[
+            \lim_{x \to 0} \frac{x - \sin x}{x^3} = 6
+        \]
+        である。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        次の極限を計算しよう。
+        \[
+            \lim_{x \to 0} \frac{x^2}{\exp x - 1 - x}
+        \]
+        この場合も分子と分母が \(x \to 0\) のとき0に近づく。
+    </p>
+    
+    <p>
+        分子が \(x^2\) であることに注目し、分母の \(\exp x\) を2次の漸近展開を用いて計算する。
+        \[
+        \exp x = 1 + x + \frac{x^2}{2} + o(x^2)
+        \]
+        となり、これを用いて分母を計算すると、
+        \[
+            \exp x - 1 - x = 1 + x + \frac{x^2}{2} + o(x^2) - 1 - x = \frac{x^2}{2} + o(x^2)
+        \]
+        となる。
+    </p>
+    
+    <p>
+        したがって、元の極限は次のように変形できる。
+        \[
+        \lim_{x \to 0} \frac{x^2}{\exp x - 1 - x}
+        = \lim_{x \to 0} \frac{x^2}{\frac{x^2}{2} + o(x^2)}
+        = \lim_{x \to 0} \frac{1}{\frac{1}{2} + \frac{o(x^2)}{x^2}}
+        = \lim_{x \to 0} \frac{1}{\frac{1}{2} + o(\frac{x^2}{x^2})}
+        = \lim_{x \to 0} \frac{1}{\frac{1}{2} + o(1)}
+        = \frac{1}{\frac{1}{2}}
+        = 2
+        \]
+    </p>
+    
+</div>
+
+<div class="example">
+    <p>
+        次の極限を計算しよう。
+        \[
+            \lim_{x \to 0} \frac{x\sqrt{1+x} - \log(1+x)}{1 - \cos x}
+        \]
+    </p>
+    
+    <p>
+        分子と分母が \(x \to 0\) のとき0に近づく。
+    </p>
+    
+    <p>
+        この極限を計算するために、\(\cos x\)、\(\log(1+x)\)、\(\sqrt{1+x}\) の漸近展開を考える。
+        2次までの漸近展開を考えると、
+        \[
+            \cos x = 1 - \frac{x^2}{2} + o(x^2) \\
+            \log(1+x) = x - \frac{x^2}{2} + o(x^2) \\
+            \sqrt{1+x} = 1 + \frac{x}{2} + o(x)
+        \]
+        （動画の$\log x$は$\log(1+x)$の誤りです。）
+    </p>
+    
+    <p>
+        \(x\sqrt{1+x}\) は、\(\sqrt{1+x}\) のテイラー展開に \(x\) をかけると
+        \[x\sqrt{1+x} = x\left(1 + \frac{x}{2} + o(x)\right) = x + \frac{x^2}{2} + o(x^2)\]
+        となる。
+    </p>
+    
+    <p>
+        これを用いて分子を計算すると、
+        \[
+            x\sqrt{1+x} - \log(1+x) = x + \frac{x^2}{2} + o(x^2) - (x - \frac{x^2}{2} + o(x^2)) = x^2 + o(x^2)
+        \]
+        となり、
+        分母は、
+        \[
+            1 - \cos x = 1 - \left(1 - \frac{x^2}{2} + o(x^2)\right) = \frac{x^2}{2} + o(x^2)
+        \]
+        となる。
+    </p>
+    
+    <p>
+        したがって、元の極限は次のように変形できる。
+        \[
+        \lim_{x \to 0} \frac{x\sqrt{1+x} - \log(1+x)}{1 - \cos x}
+        = \lim_{x \to 0} \frac{x^2 + o(x^2)}{\frac{x^2}{2} + o(x^2)} \\
+        = \lim_{x \to 0} \frac{1 + \frac{o(x^2)}{x^2}}{\frac{1}{2} + \frac{o(x^2)}{x^2}} \\
+        = \lim_{x \to 0} \frac{1 + o(\frac{x^2}{x^2})}{\frac{1}{2} + o(\frac{x^2}{x^2})} \\
+        = \lim_{x \to 0} \frac{1 + o(1)}{\frac{1}{2} + o(1)} \\ 
+        = \frac{1}{\frac{1}{2}}
+        = 2
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="summary">
+    <p>
+        本節では不定形の極限を漸近展開を用いて計算する方法を学んだ。
+        このような極限を計算するためには、分子と分母の関数をそれぞれ漸近展開し、共通する最低次の項を取り出すことで計算できる。
+    </p>
+    
+    <p>
+        具体的な手順としては、まず関数を適切な次数まで漸近展開し、その展開を用いて極限を計算する。
+        この際、ランダウの記号$o(x^n)$を用いることで、高次の微小項を適切に処理することができる。
+    </p>
+</div>
+
+</body>
+</html>
 <!-- メインサイトに戻るリンク（下部） -->
 <div class="top-bottom-link-container" style="margin-top: 50px;">
     <a href="index.html" class="back-to-main-button">クイズページに戻る</a>
