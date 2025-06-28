@@ -51,6 +51,48 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         max-width: 800px;
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
+
+    /* 以下が、解答表示のための追加CSSです */
+    .collapsible-container {
+        margin-top: 20px; /* 上部との余白 */
+    }
+    .collapsible-toggle {
+        /* チェックボックス自体を隠す */
+        position: absolute;
+        opacity: 0;
+        pointer-events: none; /* マウスイベントを無効にする */
+    }
+    .collapsible-btn {
+        /* ボタンとして表示されるラベルのスタイル */
+        display: inline-block;
+        padding: 8px 15px;
+        background-color: #e9ecef; /* ライトグレーの背景 */
+        color: #333;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        cursor: pointer;
+        user-select: none; /* テキスト選択を無効に */
+        transition: background-color 0.2s ease;
+        font-weight: bold;
+    }
+    .collapsible-btn:hover {
+        background-color: #d6dbdf; /* ホバー時の色 */
+    }
+    .collapsible-content {
+        /* デフォルトで非表示 */
+        display: none;
+        padding: 15px;
+        border: 1px solid #e0e0e0;
+        border-top: none; /* 上のボーダーは付けない */
+        border-radius: 0 0 5px 5px; /* 下の角だけ丸める */
+        background-color: #f8f9fa; /* 薄い背景色 */
+        margin-top: -1px; /* ボーダーの重なりを解消 */
+    }
+
+    /* チェックボックスがチェックされたらコンテンツを表示 */
+    .collapsible-toggle:checked ~ .collapsible-content {
+        display: block;
+    }
 </style>
 
 </head>
@@ -382,6 +424,985 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		これは、時刻\(t\)における質量\(m\)の物体の位置\(x(t)\)、加速度\(x''(t)\)、物体にかかる力\(F\)についての方程式である。
 	</p>
 </div>
+
+<h1>はじめに</h1>
+<div class="intro">
+    <p>
+        本講義では、微分法の基礎について学ぶ。
+        微分係数と導関数の定義から始まり、基本的な関数の導関数、一次近似、微分の線形性、積の微分、商の微分について解説する。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">微分係数と導関数</div>
+    <p>
+        関数\(f(x)\)の\(x=a\)での微分係数は、点\((a, f(a))\)における\(y=f(x)\)のグラフの接線の傾きである。
+        微分係数は以下の極限で定義される。
+        \[
+        f'(a)=\lim_{h\to0}\frac{f(a+h)-f(a)}{h}
+        \]
+    </p>
+    <p>
+        導関数は関数であり、微分係数を考える点\(a\)を動かして関数として捉えたものである。
+        \[
+        f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}
+        \]
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">基本的な関数の導関数</div>
+    <p>
+        基本的な関数の導関数は以下の通りである。
+    </p>
+    <ul>
+        <li>冪関数：\((x^n)'=nx^{n-1}\)（\(n\)は正の整数）</li>
+        <li>三角関数：\((\sin x)'=\cos x\)、\((\cos x)'=-\sin x\)</li>
+        <li>指数関数：\((e^x)'=e^x\)</li>
+    </ul>
+</div>
+
+<div class="section">
+    <div class="section-title">一次近似と微分係数</div>
+    <p>
+        微分係数は一次近似と密接に関連している。
+        \(h\)が十分\(0\)に近いとき、以下の近似が成り立つ。
+        \[
+        f(a+h) \sim f(a)+f'(a)h
+        \]
+    </p>
+    <p>
+        この一次近似を用いて、複雑な関数値の近似計算を行うことができる。
+        例えば、\((1+h)^n \sim 1+nh\)や\(\sin(x) \approx x\)（\(x\)が\(0\)に近いとき）などの近似が得られる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">微分の線形性</div>
+    <p>
+        微分操作は線形性を持つ。
+        関数\(f(x)\)と\(g(x)\)、および定数\(a\)と\(b\)に対して、
+        \[
+        (a \cdot f(x) + b \cdot g(x))' = a \cdot f'(x) + b \cdot g'(x)
+        \]
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">積の微分</div>
+    <p>
+        2つの関数の積の導関数は、以下の公式で与えられる。
+        \[
+        (f(x)g(x))' = f'(x)g(x) + f(x)g'(x)
+        \]
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">商の微分</div>
+    <p>
+        2つの関数の商の導関数は以下の公式で与えられる。
+        \[
+        \left(\frac{g(x)}{f(x)}\right)' = \frac{g'(x)f(x) - g(x)f'(x)}{f(x)^2}
+        \]
+    </p>
+    <p>
+        特に、関数の逆数の微分は：
+        \[
+        \left(\frac{1}{f(x)}\right)'=-\frac{f'(x)}{f(x)^2}
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="summary">
+    <p>
+        微分法の基礎として、微分係数と導関数の定義、基本的な関数の導関数、一次近似、微分の線形性、積の微分、商の微分について学ぶ。
+        これらの概念と公式を組み合わせることで、様々な関数の導関数を計算することができる。
+    </p>
+</div>
+
+<div class="intro">
+    <p>
+        本節では、基本的な関数の導関数について考察する。
+        $f(x) = x^n$（$x^2$や$x^3$などの冪関数）、三角関数$\sin x, \cos x$、および指数関数の導関数を計算する。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">微分係数</div>
+    <p>
+        関数\(f(x)\)の\(x=a\)での微分係数とは、点\((a, f(a))\)における\(y=f(x)\)のグラフの接線の傾きである。
+        この接線の傾きが\(f'(a)\)である。
+    </p>
+    
+    <p>
+        微分係数は、点\(a\)から微小量\(h\)だけ横に動いたときの関数値の変化を用いて定義される。
+        点\((a, f(a))\)から横に\(h\)動いたとき、関数値は\(f(a+h)\)となる。
+        この変化の割合\(\dfrac{f(a+h) - f(a)}{h}\)を\(h\)を0に近づけたときの極限値として微分係数が定義される。
+    </p>
+    <p>
+        \[
+        f'(a)=\lim_{h\to0}\frac{f(a+h)-f(a)}{h}
+        \]
+        と定義される。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">導関数</div>
+    <p>
+        導関数は関数であり、微分係数は特定の点における数値である。
+        微分係数を考える点\(a\)を動かして関数として捉えたものが導関数である。
+        \[
+        f'(x)=\lim_{h\to0}\frac{f(x+h)-f(x)}{h}
+        \]
+        である。
+    </p>
+    <p>
+        これは式の上で区別するというよりは、導関数\(f'(x)\)という関数の\(x=a\)での値\(f'(a)\)が微分係数である、という関係になっている。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">\(f(x) = x^n\) の導関数</div>
+    <p>
+        \(n\)を正の整数とする。
+        \(f(x) = x^n\)の導関数を計算しよう。
+        微分係数の定義に従い、
+        \[
+        \frac{(a+h)^n - a^n}{h}
+        \]
+        の\(h \to 0\)における極限を考える。
+    </p>
+    <p>
+        二項定理を用いて\((a+h)^n\)を展開すると
+        \[
+        (a+h)^n = a^n + na^{n-1}h + \binom{n}{2}a^{n-2}h^2 + \cdots + h^n
+        \]
+        となる。
+    </p>
+    
+    <p>
+        この展開式から\(a^n\)を引き、\(h\)で割ると
+        \[
+        \frac{(a+h)^n - a^n}{h} = na^{n-1} + \binom{n}{2}a^{n-2}h + \cdots + h^{n-1}
+        \]
+        となる。
+    </p>
+    <p>
+        \(h \to 0\)の極限をとると、\(h\)を含む項はすべて0に収束し、\(na^{n-1}\)のみが残る。
+        したがって、\(f(x) = x^n\)の導関数は
+        \[
+        f'(x) = nx^{n-1}
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">三角関数 \(\sin x\) の導関数</div>
+    <p>
+        三角関数\(\sin x\)の導関数は\(\cos x\)である。
+        この事実を直感的に理解するために、単位円を用いた幾何学的解釈を考察する。
+    </p>
+    
+    <p>
+        \(\sin x\)は単位円（半径1、原点中心）上で角度\(x\)における点の\(y\)座標である。
+        微分係数の定義に従い、
+        \[
+        \frac{\sin(x+h) - \sin x}{h}
+        \]
+        の\(h \to 0\)における極限を考える。
+    </p>
+    
+    <p>
+        角度を\(h\)だけ変化させると、\(y\)座標は\(\sin(x+h)\)となる。
+        \(h\)が十分小さいとき、円周上の微小な弧はほぼ直線と見なせる。
+        この状況で形成される三角形を考えると、その斜辺の長さは\(h\)であり、縦の変化量は\(\sin(x+h) - \sin x\)である。
+    </p>
+    
+    <p>
+        この三角形を拡大すると、角度\(x\)における接線と半径が直交することから、この三角形の縦と斜辺の比は\(\cos x\)に等しい。
+        したがって、
+        \[
+        \frac{\sin(x+h) - \sin x}{h} \approx \cos x
+        \]
+        となり、\(h \to 0\)の極限では
+        \[
+        \lim_{h\to0}\frac{\sin(x+h) - \sin x}{h} = \cos x
+        \]
+        が得られる。
+        この部分を厳密に証明するには、三角関数をまずどう定義するかというところを考える必要があり、そのためにはいくつかのやり方がある。
+        ここでは一旦はそこには踏み込まず、結果を認めてその上での計算などを学ぶ。
+    </p>
+    <p>
+        今回は、厳密な証明というよりは直感的に納得する方法として\(\sin x\)の導関数が\(\cos x\)であることを説明した。
+
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">指数関数 \(e^x\) の導関数</div>
+    <p>
+        指数関数\(e^x\)の導関数は\(e^x\)自身である。
+        これは指数関数の特筆すべき性質である。
+        これについても厳密にというよりは、直感的に納得する方法として説明する。
+    </p>
+    
+    <p>
+        微分係数の定義に従い、
+        \[
+        f'(a) = \lim_{h\to0}\frac{e^{a+h} - e^a}{h}
+        \]
+        を計算する。
+        指数法則により\(e^{a+h} = e^a \cdot e^h\)であるため
+        \[
+        \frac{e^{a+h} - e^a}{h} = \frac{e^a \cdot e^h - e^a}{h} = e^a \cdot \frac{e^h - 1}{h}
+        \]
+        となる。
+    </p>
+    
+    <p>
+        \(e^a\)は\(h\)に依存しない定数であるため、極限の計算において重要なのは
+        \[
+        \lim_{h \to 0}\frac{e^h - 1}{h}
+        \]
+        の値である。
+        この極限値が1であることが示されれば、\(e^x\)の導関数が\(e^x\)であることが証明されるが、
+        \(e\)はこの極限値が1になるように定義された特別な数である。
+    </p>
+    
+    <p>
+        \(2^x\)や\(3^x\)などの他の底を持つ指数関数でも指数法則は成り立つので、同様の計算により例えば\(g(x)=2^x\)の場合には
+        \[
+        g'(a) = \lim_{h\to0}\frac{2^{a+h} - 2^a}{h} = 2^a \cdot \lim_{h\to0}\frac{2^h - 1}{h}
+        \]
+        となる。
+        つまり、指数関数\(b^x\)であれば、この極限\(\lim_{h \to 0}\frac{b^h - 1}{h}\)が存在するということさえ認めれば、
+        その導関数は元の関数の定数倍になることは言える。
+        以下では、この点についてもう少し説明を加えるが、今の時点ではこれ以上の内容を理解することは不要である。
+        詳しく学びたい方は、「距離空間」の講義を受講することをお勧めする。
+    </p>
+</div>
+
+<div class="summary">
+    <p>
+        正の整数\(n\)に対する冪関数\(x^n\)、三角関数\(\sin x\)、および指数関数\(e^x\)の導関数について解説した。
+        \[
+        (x^n)'=nx^{n-1} \\
+        (\sin x)'=\cos x \\
+        (e^x)'=e^x
+        \]
+        である。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">おまけ1</div>
+    <p>
+        \(1\lt b\)に対して極限
+        \[
+        \lim_{h \to 0}\frac{b^h - 1}{h}
+        \]
+        の値を調べよう。
+    </p>
+    <p>
+        まず、極限の存在については、\(\dfrac{b^h - 1}{h}\)が\(h\)について単調増加であり、常に\(0\)より大きいため、
+        存在することは証明できる。
+        （数列が単調減少で下に有界なら極限が存在することと、関数の収束を数列の収束により判定できるという事実を用いる。）
+    </p>
+    <p>
+        \[
+        e = \lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n
+        \]
+        と定義する。
+        これに対して、
+        \[
+        \lim_{h \to 0}\frac{e^h - 1}{h} = 1
+        \]
+        となることを証明しよう。
+    </p>
+    <p>
+        極限の存在は保証されているので、正の整数\(m\)に対して\(h=\dfrac{1}{m}\)として\(m\to\infty\)の極限を計算すればよい。
+        そこで、\(m\)を一旦固定して計算する。
+        \[
+        e^{1/m} = \lim_{n\to\infty}\left(1+\frac{1}{n}\right)^{n/m}
+        \]
+        である。
+        この極限も上に有界かつ単調増加なことから存在が保証されるため、部分列で計算すればよく、\(n=mk\)として\(k\to\infty\)の極限を計算すればよい。
+        \[
+        e^{1/m} = \lim_{k\to\infty}\left(1+\frac{1}{mk}\right)^{k}
+        \]
+        となる。
+        \(m\)を固定したまま計算すると、
+        \[
+        \frac{e^{1/m} - 1}{1/m}
+        =
+        \lim_{k\to\infty}\frac{\left(1+\frac{1}{mk}\right)^{k}-1}{1/m}
+        \]
+        となる。
+    </p>
+    <p>
+        さらに、\(k\)も固定して計算すると、
+        \[
+        \frac{\left(1+\frac{1}{mk}\right)^{k}-1}{1/m}
+        =
+        \frac{1+\frac{1}{m}+\binom{k}{2}\frac{1}{m^2k^2}+\cdots+\frac{1}{m^kk^k}-1}{1/m} \\
+        =
+        1 + \frac{1}{m}\binom{k}{2}\frac{1}{k^2}+\cdots+\frac{1}{m^{k-1}}\binom{k}{k}\frac{1}{k^k} \\
+        =
+        1 + \frac{1}{m}\left(\binom{k}{2}\frac{1}{k^2}+\cdots+\frac{1}{m^{k-1}}\binom{k}{k}\frac{1}{k^k}\right)
+        \]
+        となる。
+    </p>
+    <p>
+        これについて、\(k\to\infty\)の極限を計算したあと\(m\to\infty\)の極限を計算することになる。
+        \[
+        \binom{k}{2}\frac{1}{k^2}+\cdots+\frac{1}{m^{k-1}}\binom{k}{k}\frac{1}{k^k}
+        \leq 
+        \binom{k}{2}\frac{1}{k^2}+\cdots+\binom{k}{k}\frac{1}{k^k}
+        \]
+        であり、この\(k\to\infty\)の極限が存在することは
+        \[
+        \left(1+\frac{1}{k}\right)^k 
+        =
+        1 + 1 + \binom{k}{2}\frac{1}{k^2}+\cdots+\binom{k}{k}\frac{1}{k^k}
+        \]
+        の\(k\to\infty\)の極限値\(c\)が存在することからよい。（実際には\(e-2\)となる。）
+    </p>
+    <p>
+        よって、さらに\(m\to\infty\)の極限を計算すると、
+        \[
+        1 + \frac{1}{m}c \to 1
+        \]
+        となるため、示すべき等式が導かれた。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">おまけ2</div>
+    <p>
+        三角関数をどう定義するか。
+        いくつかのやり方があるが、この講義の内容に関係するものとしては以下の方法がある。
+    </p>
+    <p>
+        まず、積分を用いて逆三角関数を定義し、その逆関数として三角関数を定義する方法。
+        名前がおかしな感じがするが、論理的にはない。
+        まず逆三角関数を（三角関数を定義する前に）積分を用いて定義する。
+        これは円の長さを積分を用いて計算する方法と解釈することもできる。
+        次に、この関数の逆関数として三角関数を定義する。
+    </p>
+    <p>
+        三角関数をテイラー展開を用いて定義する方法。
+        三角関数をテイラー展開するのではなく、まず無限級数として三角関数を定義する。
+    </p>
+    <p>
+        三角関数を微分方程式を用いて定義する方法。
+        ある微分方程式とその初期値の解として三角関数を定義する。
+    </p>
+    <p>
+        いずれの方法でも結局はお馴染みの\(\sin x\)が定義される。
+        これらについては解析1の学習を進めていきながら考えてみてほしい。
+    </p>
+</div>
+
+<h1>一次近似と微分係数</h1>
+
+<div class="intro">
+    <p>
+        今回は、微分係数と一次近似の関係を学ぶ。
+    </p>
+    <p>
+        微分係数を用いて、いろいろな関数の値の近似計算を行う。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">微分径数と一次近似</div>
+    <p>
+        微分係数の定義式は以下のとおりである。
+        \[
+        f'(a)=\lim_{h\to0}\frac{f(a+h)-f(a)}{h}
+        \]
+    </p>
+    <p>
+        極限をもう少し直感的に表現すれば、\(h\)が十分\(0\)に近いとき、次の近似ができることを意味する。
+        \[
+        f'(a) \sim \frac{f(a+h) - f(a)}{h}
+        \]
+    </p>
+    
+    <p>
+        この式を変形すると
+        \[
+        f'(a) \times h \sim f(a+h) - f(a) \\
+        f(a+h) \sim f(a) + f'(a) \times h
+        \]
+        となる。
+    </p>
+
+    <p>
+        つまり、微分係数の定義は次のように一次式による近似として理解することができる。
+        \[
+        f(a+h) \sim f(a)+f'(a)h
+        \]
+        となる。
+        ここで、\(a\)は固定されており、\(h\)が変化していると考える。
+        変数を\(x\)で表現すると、例えば
+        \[
+        f(x) \sim f(a)+f'(a)(x-a)
+        \]
+        と表すこともできる。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        \(n\)を正の整数として、
+        \((1+h)^n\) を \(h\) が \(0\) に十分近い範囲で近似しよう。
+        \(f(x)=x^n\)の導関数は\(f'(x)=n(1+x)^{n-1}\)である。
+    </p>
+    
+    <p>
+        したがって、\(h\)が十分小さいとき、\(x=1\)の周りでの一次近似は
+        \[
+        (1+h)^n \sim 1+nh
+        \]
+        と近似できる。
+    </p>
+    
+    <p>
+        具体例として、\((1.001)^{100}\) を計算する場合を考える。
+        厳密に計算するには \(1.001\) を100回掛け合わせる必要があるが、近似を用いると
+        \[
+        (1.001)^{100} \approx 1 + 100 \times 0.001 = 1 + 0.1 = 1.1
+        \]
+        となる。
+    </p>
+</div>
+
+
+<div class="example">    
+    <p>
+        関数 \(f(x) = \sin(x)\) を\(x=0\)の周りで近似しよう。
+        この関数の導関数は \(f'(x) = \cos(x)\) であるため、\(x = 0\) における導関数の値は \(f'(0) = \cos(0) = 1\) となる。
+        このことから、\(x=0\)の近傍では
+        \[
+        \sin(x) \approx x
+        \]
+        と近似できる。
+    </p>
+            
+    <p>
+        実際に数値例で確認すると、\(\sin(0.01)\) の値は約0.00999983であり、\(0.01\) との差は非常に小さい。
+        小数点以下4桁までの精度ではほぼ同じ値となる。
+        このように、\(h\) が十分小さい場合、\(\sin(h)\) の値は \(h\) の値とほぼ一致する。
+    </p>
+</div>
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/style.css">
+<script type="text/javascript" src="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/config.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<title>微分の線形性</title>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NW2C5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NW2C5Z');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<h1>微分の線形性</h1>
+
+<div class="intro">
+    <p>
+        関数を微分して微分係数や導関数を求めるという操作が線形性を持つことをみる。
+        つまり、関数の和の導関数がそれぞれの関数の導関数の和に等しく、
+        また定数倍された関数の導関数がその関数の導関数の定数倍に等しいことを学ぶ。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">和の微分</div>    
+    <p>
+        関数\(f(x)\)と\(g(x)\)の和\(f(x)+g(x)\)の導関数は、
+        \[
+        (f(x) + g(x))' = f'(x) + g'(x)
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        \(x^2+\sin(x)\)の導関数を計算しよう。
+    </p>
+    <p>
+        \(f(x)=x^2\)の導関数は\(f'(x)=2x\)である。
+        \(g(x)=\sin(x)\)の導関数は\(g'(x)=\cos(x)\)である。
+        したがって、\(x^2+\sin(x)=f(x)+g(x)\)の導関数は
+        \[
+        f'(x)+g'(x)=2x+\cos(x)
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">和の微分の導出</div>
+    <p>
+        関数\(f(x), g(x)\)を\(x=a\)の周りで一次近似したときの係数が微分係数であった。
+        \[
+        f(a+h) \sim f(a)+f'(a)h \\
+        g(a+h) \sim g(a)+g'(a)h
+        \]
+        となる。
+    </p>
+    <p>
+        したがって、\(f(x)+g(x)\)の\(x=a\)の周りでの一次近似は
+        \[
+        f(a+h)+g(a+h) \sim f(a)+g(a)+f'(a)h+g'(a)h = (f(a)+g(a))+(f'(a)+g'(a))h
+        \]
+        となる。
+    </p>
+    <p>
+        この一次の係数が微分係数と解釈できるため、
+        \[
+        (f(x)+g(x))' = f'(x)+g'(x)
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">定数倍の微分</div>    
+    <p>
+        関数\(f(x)\)の定数倍\(a\cdot f(x)\)の導関数は、
+        \[
+        (a \cdot f(x))' = a \cdot f'(x)
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        \(f(x) = 3x^2 + 4\sin(x)\)の導関数は
+        \[
+        f'(x) = 3 \cdot (x^2)' + 4 \cdot (\sin(x))' = 3 \cdot 2x + 4 \cdot \cos(x) = 6x + 4\cos(x)
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">定数倍の微分の導出</div>
+    <p>
+        関数\(f(x)\)を\(x=a\)の周りで一次近似したときの係数が微分係数であった。
+    </p>
+    <p>
+        \(f(x)=a\cdot f(x)\)の\(x=a\)の周りでの一次近似は
+        \[
+        f(a+h) \sim f(a)+f'(a)h
+        \]
+        となる。
+    </p>
+    <p>
+        したがって、\(f(x)=a\cdot f(x)\)の\(x=a\)の周りでの一次近似は
+        \[
+        f(a+h) \sim f(a)+f'(a)h = a\cdot f(a)+a\cdot f'(a)h
+        \]
+        となる。
+    </p>
+    <p>
+        この一次の係数が微分係数と解釈できるため、
+        \[
+        (a\cdot f(x))' = a\cdot f'(x)
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">微分の線形性</div>
+    
+    <p>
+        関数 \(f(x)\) と \(g(x)\)、および定数 \(a\) と \(b\) に対して
+        \[
+        (a \cdot f(x) + b \cdot g(x))' = a \cdot f'(x) + b \cdot g'(x)
+        \]
+        となる。
+    </p>
+
+    <p>
+        関数を微分するという操作に注目して、微分作用素\(\dfrac{d}{dx}\)を用いて記述する。
+        まず、関数\(f\)の導関数\(f'\)を
+        \[
+        \frac{d}{dx}f
+        \]
+        と表すことにする。
+        これを用いると、上の線形性の式は
+        \[
+        \frac{d}{dx}(a\cdot f + b\cdot g) = a\cdot \frac{d}{dx}f + b\cdot \frac{d}{dx}g
+        \]
+        表すことができる。
+    </p>
+        
+    <p>
+        線形性という性質については、線形代数で詳しく学ぶ。
+        関数に対してその導関数を対応させる操作が線形性をもつ（線形写像である）ことは、
+        線形代数が重要であることの大きな理由である。
+    </p>    
+</div>
+
+<div class="summary">
+    <p>
+        微分の線形性
+        \[
+        (a \cdot f(x) + b \cdot g(x))' = a \cdot f'(x) + b \cdot g'(x)
+        \]
+        を用いると、関数の和の導関数を計算することができる。
+    </p>
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/style.css">
+<script type="text/javascript" src="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/config.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<title>積の微分</title>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NW2C5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NW2C5Z');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<h1>積の微分</h1>
+
+<div class="intro">
+    <p>
+        本節では、積の微分について考察する。すなわち、2つの関数の積で表される関数を微分した場合の計算方法を解説する。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">積の微分公式</div>
+    <p>
+        2つの関数 \(f(x)\) と \(g(x)\) の積 \(f(x)g(x)\) の導関数は
+        \[
+        (f(x)g(x))' = f'(x)g(x) + f(x)g'(x)
+        \]
+        で与えられる。
+    </p>
+    
+    <p>
+        関数の和の場合は各関数の導関数を加えればよいが、積の場合はそれぞれの導関数を単純に掛け合わせるだけでは正しい結果が得られないことに注意しよう。
+    </p>
+    
+</div>
+
+<div class="example">
+    <p>
+        関数
+        \[
+        x^2\sin(x)
+        \]
+        の導関数を計算する。
+    </p>
+    <p>
+        ここで、\(f(x) = x^2\)、\(g(x) = \sin(x)\) とすると、それぞれの導関数は \(f'(x) = 2x\)、\(g'(x) = \cos(x)\) である。
+        よって、
+        \[
+        (x^2\sin(x))' = 2x\sin(x) + x^2\cos(x)
+        \]
+        となる。
+    </p>
+    
+</div>
+
+<div class="section">
+    <div class="section-title">積の微分公式の導出</div>
+    
+    <p>
+        一次近似の考え方を用いて積の微分公式を導出する。
+    </p>
+    
+    <p>
+        関数 \(f(x)\) を点 \(a\) の周りで一次近似すると
+        \[
+        f(a+h) \sim f(a) + f'(a) h
+        \]
+        となる。
+    </p>
+    
+    <p>
+        同様に、関数 \(g(x)\) についても
+        \[
+        g(a+h) \sim g(a) + g'(a) h
+        \]
+        となる。
+    </p>
+    
+    <p>
+        これらの積を考えると
+        \[
+        f(a+h)g(a+h) \sim (f(a) + f'(a)h)(g(a) + g'(a)h)
+        \]
+        となる。
+    </p>
+    
+    <p>
+        右辺を展開すると
+        \[
+        f(a)g(a) + f'(a)g(a)h + f(a)g'(a)h + f'(a)g'(a)h^2
+        \]
+        となる。
+    </p>
+    
+    <p>
+        \(h\) が十分に小さい場合、\(h^2\) の項は無視できるため
+        \[
+        f(a+h)g(a+h) \sim f(a)g(a) + (f'(a)g(a) + f(a)g'(a))h
+        \]
+        となる。
+    </p>
+    
+    <p>
+        一次近似の定義から、\(h\) の係数が導関数となるため
+        \[
+        (fg)'(a) = f'(a)g(a) + f(a)g'(a)
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="summary">
+    <p>
+        積の微分公式
+        \[
+        (f(x)g(x))' = f'(x)g(x) + f(x)g'(x)
+        \]
+        を用いると、関数の積の導関数を計算することができる。
+    </p>
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/style.css">
+<script type="text/javascript" src="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/config.js" defer></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<title>商の微分</title>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NW2C5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NW2C5Z');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<h1>商の微分</h1>
+
+<div class="intro">
+    <p>
+        この節では二つの関数の比を微分する方法を学ぶ。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">商の微分公式</div>    
+    <p>
+        関数 \(f(x)\) と \(g(x)\) の比 \(\frac{g(x)}{f(x)}\) の微分は次式で与えられる。
+        \[
+        \left(\frac{g(x)}{f(x)}\right)' = \frac{g'(x)f(x) - g(x)f'(x)}{f(x)^2}
+        \]
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        関数
+        \[
+        \frac{x}{1+x^2}
+        \]
+        の導関数を計算する。
+    </p>
+    <p>
+        分子 \(x\) の微分は \(1\) であり、分母 \(1 + x^2\) の微分は \(2x\) である。
+        よって、
+        \[
+        \left(\frac{x}{1+x^2}\right)'
+        =
+        \frac{1 \cdot (1 + x^2) - x \cdot 2x}{(1 + x^2)^2}
+        =
+        \frac{1 + x^2 - 2x^2}{(1 + x^2)^2}
+        =
+        \frac{1 - x^2}{(1 + x^2)^2}
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">商の微分公式の導出</div>
+    <p>
+        商の微分公式の導出には、分数の有理化と同様の考え方を適用する。
+        分子と分母に適切な式をかけることで式を整理し、高次の微小項を無視する近似計算を行うことで一次近似の式を導く。
+    </p>
+    <p>
+        関数\(f(x), g(x)\)が\(x=a\)の周りで以下のように一次近似されているとする。
+        \[
+        f(a+h)\sim f(a)+hf'(a) \\
+        g(a+h)\sim g(a)+hg'(a)
+        \]
+    </p>
+    <p>
+        このとき、商の微分公式は以下のように導かれる。
+        まず、分子と分母に共通に\(f(a)-hf'(a)\)をかける。
+        \[
+        \frac{g(a+h)}{f(a+h)}
+        \sim
+        \frac{g(a)+hg'(a)}{f(a)+hf'(a)} \\
+        \sim
+        \frac{(g(a)+hg'(a))(f(a)-hf'(a))}{(f(a)+hf'(a))(f(a)-hf'(a))} \\
+        \sim
+        \frac{g(a)f(a)-g(a)hf'(a)+hg'(a)f(a)-h^2g'(a)f'(a)}{f(a)^2-h^2f'(a)^2}
+        \]
+    </p>
+    <p>
+        ここで、\(h^2\)の項を無視すると、
+        \[
+        \frac{g(a)f(a)-g(a)hf'(a)+hg'(a)f(a)-h^2g'(a)f'(a)}{f(a)^2-h^2f'(a)^2}
+        \sim
+        \frac{g(a)f(a)-g(a)hf'(a)+hg'(a)f(a)}{f(a)^2} \\
+        \sim
+        \frac{g(a)f(a)}{f(a)^2} - \frac{g'(a)f(a)-g(a)f'(a)}{f(a)^2}h
+        \]
+        となる。
+    </p>
+    <p>
+        この\(h\)の係数が微分係数である。
+        つまり、
+        \[
+        \left(\frac{g(x)}{f(x)}\right)' = \frac{g'(x)f(x) - g(x)f'(x)}{f(x)^2}
+        \]
+        となる。
+    </p>
+
+        
+</div>
+
+<div class="section">
+    <div class="section-title">関数の逆数の微分</div>
+    <p>
+        分子が\(1\)の場合を考えるとより単純なので、補足としてそのケースを別途説明する。
+    </p>
+    <p>
+        関数\(f(x)\)が\(x=a\)の周りで以下のように一次近似されているとする。
+        \[
+        f(a+h)\sim f(a)+hf'(a)
+        \]
+        このとき、関数\(\frac{1}{f(x)}\)の\(x=a\)の周りでの一次近似は
+        \[
+        \frac{1}{f(a+h)}
+        \sim
+        \frac{1}{f(a)+hf'(a)} \\
+        \sim
+        \frac{f(a)-hf'(a)}{(f(a)+hf'(a))(f(a)-hf'(a))} \\
+        \sim
+        \frac{f(a)}{f(a)^2} - \frac{f'(a)}{f(a)^2}h \\
+        \]
+    </p>
+    <p>
+        この\(h\)の係数が微分係数である。
+        つまり、
+        \[
+        \left(\frac{1}{f(x)}\right)'=-\frac{f'(x)}{f(x)^2}
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        関数
+        \[
+        f(x)=\frac{x^n}{e^x}
+        \]
+        の導関数を計算する。
+    </p>
+    <p>
+        分子 \(x^n\) の微分は \(nx^{n-1}\) であり、分母 \(e^x\) の微分は \(e^x\) である。
+        よって、
+        \[
+        \left(\frac{x^n}{e^x}\right)'
+        =
+        \frac{nx^{n-1} \cdot e^x - x^n \cdot e^x}{(e^x)^2} \\
+        =
+        \frac{e^x(nx^{n-1} - x^n)}{e^{2x}} \\
+        =
+        \frac{nx^{n-1} - x^n}{e^x} \\
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="example">
+    <p>
+        関数
+        \[
+        f(x)=\tan(x)
+        \]
+        の導関数を計算する。
+    </p>
+    <p>
+        分子 \(\sin(x)\) の微分は \(\cos(x)\) であり、分母 \(\cos(x)\) の微分は \(-\sin(x)\) である。
+        よって、
+        \[
+        \tan'(x) = \left(\frac{\sin(x)}{\cos(x)}\right)' = \frac{\cos(x) \cdot \cos(x) - \sin(x) \cdot (-\sin(x))}{(\cos(x))^2} = \frac{\cos^2(x) + \sin^2(x)}{(\cos(x))^2} = \frac{1}{(\cos(x))^2}
+        \]
+        となる。
+    </p>
+</div>
+
+<div class="summary">
+    <p>
+        商の微分公式
+        \[
+        \left(\frac{f(x)}{g(x)}\right)' = \frac{f'(x)g(x) - f(x)g'(x)}{g(x)^2}
+        \]
+        を用いると、関数の商の導関数を計算することができる。
+    </p>
+</div>
+</body>
+</html>
 
 <!-- メインサイトに戻るリンク（下部） -->
 <div class="top-bottom-link-container" style="margin-top: 50px;">
