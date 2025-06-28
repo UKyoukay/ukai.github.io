@@ -1,0 +1,514 @@
+/* 基本スタイル（ホワイトモードの基準となります） */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* フォント変更 */
+    line-height: 1.7; /* 行間を広げる */
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* デフォルトの背景色を白にリセット */
+    color: #333; /* デフォルトの文字色 */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    background: linear-gradient(135deg, #1f4e79 0%, #2c5e9e 100%); /* グラデーションヘッダー */
+    color: #fff;
+    padding: 1.2rem 0;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.2em;
+    letter-spacing: 1px;
+}
+
+.mode-toggle-button {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    padding: 8px 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+}
+
+.mode-toggle-button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* 解答状況表示領域のスタイル */
+#quiz-summary {
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 1px solid #c8e6c9;
+    border-radius: 10px;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+#quiz-summary p {
+    margin: 6px 0;
+    font-size: 1.1em;
+}
+
+
+#quiz-container { /* クイズページのコンテナ */
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #fff; /* ホワイトモードでは白 */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.question {
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.question-text {
+    font-weight: 600;
+    margin-bottom: 18px;
+    font-size: 1.3em;
+    color: #2c3e50;
+}
+
+.options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.options li {
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    align-items: baseline;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.options li:hover {
+    background-color: #f8f9fa;
+    border-color: #b0bec5;
+    transform: translateY(-2px);
+}
+
+.options input[type="radio"] {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 18px;
+    cursor: pointer;
+    margin-top: 2px;
+    accent-color: #1f4e79; /* ラジオボタンの色を変更 */
+}
+
+.options label {
+    flex-grow: 1;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+/* 回答済みの場合のスタイル */
+.options input[type="radio"]:disabled + label {
+    color: #7f8c8d;
+}
+
+/* 選択された選択肢 */
+.options input[type="radio"]:checked + label {
+    font-weight: bold;
+    color: #1f4e79;
+}
+
+
+.check-answer {
+    display: block;
+    width: fit-content;
+    margin: 25px auto 0;
+    padding: 12px 25px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(76, 175, 80, 0.4);
+}
+
+.check-answer:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.check-answer:disabled {
+    background-color: #b0bec5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+
+.result {
+    margin-top: 20px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.15em;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.result.correct {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+.result.incorrect {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+}
+
+.explanation {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #fdfdfd;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+    font-size: 0.95em;
+    color: #555;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    line-height: 1.7;
+}
+
+/* ナビゲーションボタン */
+#nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding: 0 10px;
+}
+
+#back-btn,
+#next-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+}
+
+#back-btn {
+    background-color: #607d8b;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(96, 125, 139, 0.4);
+}
+
+#back-btn:hover {
+    background-color: #455a64;
+    transform: translateX(-2px);
+}
+
+#back-btn:disabled {
+    background-color: #bcced2;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+#next-btn {
+    background-color: #ff9800;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(255, 152, 0, 0.4);
+}
+
+#next-btn:hover {
+    background-color: #f57c00;
+    transform: translateX(2px);
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 25px 0;
+    background: #2c3e50; /* 深いダークブルー */
+    color: #ecf0f1;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 0.95em;
+    box-shadow: 0 -3px 8px rgba(0,0,0,0.3);
+}
+
+/* --- vocaburary.html 固有のスタイル --- */
+
+#vocabulary-container {
+    padding-top: 20px;
+}
+
+#vocabulary-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0;
+}
+
+.vocabulary-item {
+    padding: 20px;
+    border: 1px solid #4a627a;
+    border-radius: 10px;
+    background-color: #3c4a5a;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.vocabulary-item:hover {
+    background-color: #4a5a6a;
+    border-color: #5a7c9a;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.vocabulary-item h3 {
+    margin-top: 0;
+    color: #81c784; /* 説明的な緑色 */
+    border-bottom: 2px solid #42a5f5; /* 明るい青のボーダー */
+    padding-bottom: 10px;
+    font-size: 1.4em;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.vocabulary-item p {
+    margin-bottom: 0;
+    color: #bdc3c7; /* 明るめのグレー */
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+/* メインページに戻るリンクのスタイル */
+.back-to-main {
+    display: block;
+    text-align: center;
+    margin: 25px auto;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    color: #90caf9; /* 明るい青 */
+    text-decoration: none;
+    border: 1px solid #90caf9;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    width: fit-content;
+    background-color: rgba(144, 202, 249, 0.1);
+}
+.back-to-main:hover {
+    background-color: #90caf9;
+    color: #2c3e50;
+    transform: translateY(-3px);
+}
+
+
+/* --- ダークモード適用時のスタイル --- */
+body.dark-mode {
+    background-color: #212121; /* より深い黒に近い背景 */
+    color: #e0e0e0;
+}
+
+body.dark-mode header {
+     background: linear-gradient(135deg, #1a237e 0%, #212121 100%); /* ダークヘッダー */
+     color: #fff;
+     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .mode-toggle-button {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+body.dark-mode .mode-toggle-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* クイズコンテナ */
+body.dark-mode #quiz-container {
+    background: #303030; /* コンテナ背景をダークに */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* クイズの各要素のダークモードスタイル */
+body.dark-mode #quiz-summary {
+    border-color: #386641;
+    background-color: #3a3a3a;
+    color: #a7c957;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+body.dark-mode .question {
+    border-bottom-color: #424242;
+}
+
+body.dark-mode .question-text {
+    color: #e0e0e0;
+}
+
+body.dark-mode .options li {
+    background-color: #3a3a3a;
+    border-color: #555;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .options li:hover {
+    background-color: #4a4a4a;
+    border-color: #777;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .options input[type="radio"] {
+    accent-color: #90caf9;
+}
+
+body.dark-mode .options input[type="radio"]:checked + label {
+    color: #90caf9;
+}
+body.dark-mode .options input[type="radio"]:disabled + label {
+    color: #757575;
+}
+
+body.dark-mode .result.correct {
+    background-color: #386641;
+    color: #a7c957;
+    border-color: #4CAF50;
+}
+
+body.dark-mode .result.incorrect {
+    background-color: #6a040f;
+    color: #e76f51;
+    border-color: #ef9a9a;
+}
+
+body.dark-mode .explanation {
+    background-color: #3a3a3a;
+    border-color: #555;
+    color: #e0e0e0;
+}
+
+body.dark-mode #back-btn {
+    background-color: #546e7a;
+    color: #e0e0e0;
+    box-shadow: 0 2px 5px rgba(84, 110, 122, 0.4);
+}
+body.dark-mode #back-btn:hover {
+    background-color: #37474f;
+    transform: translateX(-2px);
+}
+body.dark-mode #back-btn:disabled {
+    background-color: #424242;
+}
+
+body.dark-mode #next-btn {
+    background-color: #f57c00;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(255, 152, 0, 0.4);
+}
+body.dark-mode #next-btn:hover {
+    background-color: #ef6c00;
+    transform: translateX(2px);
+}
+
+body.dark-mode footer {
+    background: #1a237e;
+    color: #ecf0f1;
+    box-shadow: 0 -3px 8px rgba(0,0,0,0.3);
+}
+
+/* --- vocaburary.html 固有のスタイル --- */
+
+#vocabulary-container {
+    padding-top: 20px;
+}
+
+#vocabulary-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0;
+}
+
+.vocabulary-item {
+    padding: 20px;
+    border: 1px solid #4a627a;
+    border-radius: 10px;
+    background-color: #3c4a5a;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.vocabulary-item:hover {
+    background-color: #4a5a6a;
+    border-color: #5a7c9a;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.vocabulary-item h3 {
+    margin-top: 0;
+    color: #81c784;
+    border-bottom: 2px solid #42a5f5;
+    padding-bottom: 10px;
+    font-size: 1.4em;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.vocabulary-item p {
+    margin-bottom: 0;
+    color: #bdc3c7;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+/* メインページに戻るリンクのスタイル */
+.back-to-main {
+    display: block;
+    text-align: center;
+    margin: 25px auto;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    color: #90caf9;
+    text-decoration: none;
+    border: 1px solid #90caf9;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    width: fit-content;
+    background-color: rgba(144, 202, 249, 0.1);
+}
+.back-to-main:hover {
+    background-color: #90caf9;
+    color: #2c3e50;
+    transform: translateY(-3px);
+}
