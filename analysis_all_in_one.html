@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- N予備校のスタイルシートを読み込み -->
+<link rel="stylesheet" href="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/style.css">
+<!-- N予備校のconfig.js (defer属性は維持) -->
+<script type="text/javascript" src="https://cdn.nnn.ed.nico/drive/zen_university/assets/zen_math/umezaki/config.js" defer></script>
+<!-- MathJax (数式表示のため) -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+<!-- ページのタイトルを統合 -->
+<title>経済入門 - 解析学資料</title>
+<!-- Google Tag Manager (複数のHTMLで重複していたものを一つにまとめる) -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NW2C5Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NW2C5Z');</script>
+<!-- End Google Tag Manager -->
+
+<!-- 追加スタイル: 各資料セクション間の区切り線と、メインサイトに戻るボタンのスタイル -->
+<style>
+    .section-separator {
+        margin: 40px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+        opacity: 0.5; /* 少し薄くする */
+    }
+    .back-to-main-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff; /* 青色のボタン */
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 1.1em;
+        transition: background-color 0.3s ease;
+    }
+    .back-to-main-button:hover {
+        background-color: #0056b3; /* ホバーで少し暗く */
+    }
+    .top-bottom-link-container {
+        text-align: center;
+        margin: 20px auto;
+        padding: 15px;
+        background-color: #f0f0f0;
+        border-radius: 8px;
+        max-width: 800px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+</style>
+
+</head>
+<body>
+
+<!-- メインサイトに戻るリンク（上部） -->
+<div class="top-bottom-link-container">
+    <a href="index.html" class="back-to-main-button">クイズページに戻る</a>
+</div>
+
+<!-- ここから元の「解析学で学ぶこと」のコンテンツ -->
+<h1>解析学で学ぶこと</h1>
+
+<div class="section">
+    <div class="section-title">解析学</div>
+    <p>
+        解析学とは、主に微分と積分を用いて関数の様子を調べる数学の分野である。
+    </p>
+    <p>
+        解析学1では、一変数関数\(y = f(x)\)の微分と積分を学ぶ。
+        解析学2では多変数関数\(z = f(x,y)\)の微分と積分を学ぶ。
+        解析学3では曲がった空間上での微分積分を扱う。
+    </p>
+    <p>
+        極限、近似、無限大・無限小などの概念を用いて、関数の性質を調べる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">微分</div>
+    <p>
+        微分は、関数の局所的な変化の様子を調べる手法である。
+        ある点の周りでの関数の様子を調べ、さまざまな関数を一次関数で近似する。
+    </p>
+    <p>
+        例えば、時間に対する位置の変化から速度を求めたり、ある点での関数の増減を調べたりすることができる。
+        また、微分を用いることで、関数の極値を求めることができる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">積分</div>
+    <p>
+        積分は、関数の大域的な性質を調べる手法である。
+        ある区間全体での関数の振る舞いを考え、関数のグラフで囲まれた面積、変化の総量、連続的なデータの平均などを求めることができる。
+    </p>
+</div>
+
+<div class="section">
+    <div class="section-title">微分積分学の基本定理</div>
+    <p>
+        一見異なる概念に見える微分と積分だが、両者には深い関係がある。
+        例えば、積分を計算する際に「微分したらその関数になるもの」を探すという手法が使われる。
+        この関係を明らかにするのが微分積分学の基本定理であり、これは解析学の重要な目標の一つである。
+    </p>
+</div>
+
+<h2>質問対応について</h2>
+
+<p>
+    質問などがあればこのページの右上にあるフォーラムに投稿をお願いします。
+    また、学生slackに授業のチャンネル #class_解析学1_解析学2がありますので、そちらもご参加ください。
+    質問はそちらでも受け付けていますし、質問対応以外の情報共有なども行う予定です。
+</p>
+
+<p>
+    また、テキストの誤りについては修正し適宜お知らせいたします。
+</p>
+
+<!-- 各コンテンツブロック間の区切り -->
+<hr class="section-separator">
+
+<!-- ここから元の「関数とグラフ」のコンテンツ -->
+<h1>関数とグラフ</h1>
+
+<div class="section">
+	<div class="section-title">関数</div>
+	<p>
+		一変数の実数値関数とは、実数\(x\)に対して実数\(y\)が一意に対応する規則である。
+		これを\(y = f(x)\)と表す。
+	</p>
+</div>
+
+<div class="section">
+	<div class="section-title">関数のグラフ</div>
+	<p>
+		\(xy\)平面上に、\(y = f(x)\)を満たす点\((x, y)\)をプロットすることで関数のグラフが得られる。
+		グラフは関数の性質を視覚的に理解する上で重要な道具となる。
+	</p>
+	<p>
+		関数の性質として、\(x\)を一つ決めたときに\(y\)が一意に決まることから、グラフを縦に見たとき、各\(x\)座標に対して点は高々一つしかない。
+	</p>
+</div>
+
+<div class="section">
+	<div class="section-title">さまざまな関数</div>
+	<p>
+		一次関数は\(y = ax + b\)の形で表される関数で、グラフは直線となる。
+		最も単純な関数の一つだが、微分積分学において重要な役割を果たす。
+		微分では、複雑な関数をある点の周りで一次関数により近似することで関数の性質を調べる。
+		この考え方は積分にも関わってくる。
+	</p>
+	<p>
+		二次関数は\(y = ax^2 + bx + c\)の形で表される関数で、グラフは放物線となる。
+		一次関数の次に単純な関数であり、微分積分学でも重要である。
+		一次関数による近似だけでは不十分な場合、二次関数による近似を考えることで、より詳しい情報が得られる。
+	</p>
+	<p>
+		三次以上の項を含む関数も存在するが、本講義では主に一次関数と二次関数を扱う。
+		これらは複雑な関数を近似する際の基本となる。
+	</p>
+	<p>
+		三角関数（例えば正弦関数\(\sin x\)）は周期的な波形を描く関数である。
+		自然現象に多く現れ、周期的に変化する現象（気温の変化、株価の変動など）のモデル化に用いられる。
+	</p>
+	<p>
+		指数関数の代表例は\(e^x\)である。ここで\(e\)は自然対数の底で、約2.71828...である。
+		\(e^x\)は微分しても形が変わらないという重要な性質を持つ。
+		指数関数は感染症の拡大や複利計算など、一定の割合で増加する現象のモデル化に用いられる。
+	</p>
+	<p>
+		ガンマ関数という新しい関数も定義する。
+		\[
+		\Gamma(x) = \int_0^\infty t^{x-1} e^{-t} dt
+		\]
+		積分を使って関数を定義する。
+		ガンマ関数は数学のみならず物理学や統計学でも重要である。
+	</p>
+</div>
+
+<!-- 各コンテンツブロック間の区切り -->
+<hr class="section-separator">
+
+<!-- ここから元の「図形の面積」のコンテンツ -->
+<h1>図形の面積</h1>
+
+<div class="section">
+	<div class="section-title">長方形の面積</div>
+	<p>
+		長方形の面積は、横の長さと縦の長さをかけることで求められる。
+		横の長さを\(a\)、縦の長さを\(b\)とすると、面積は
+		\[
+		a \times b
+		\]
+		となる。
+	</p>
+	<p>
+		これは、1辺が1の正方形の面積を1と定めた基準に対して、横幅と縦幅の比率に応じて面積が比例するという考え方に基づいている。
+		つまり、基準となる正方形が何個分あるかを計算することで面積が求められる。
+	</p>
+</div>
+
+<div class="section">
+	<div class="section-title">三角形の面積</div>
+	<p>
+		三角形の面積は、底辺の長さ\(a\)と高さ\(b\)を用いて、
+		\[
+		\frac{1}{2}a \times b
+		\]
+		で求められる。
+		この公式は、同じ形の三角形を反転させて配置し、長方形を作ることで導かれる。
+	</p>
+	<p>
+		元の三角形とそれを反転させた三角形の面積が等しいこと、およびできあがる平行四辺形の面積が同じ底辺と高さを持つ長方形の面積と等しいことから従う。
+	</p>
+</div>
+
+<div class="section">
+	<div class="section-title">多角形の面積</div>
+	<p>
+		多角形の面積は、その図形を三角形に分割することで求められます。
+	</p>
+</div>
+
+<div class="section">
+	<div class="section-title">円の面積</div>
+	<p>
+		円の面積を求める方法として、円を多数の三角形に分割して近似する方法があります。
+		半径\(r\)の円を多数の三角形に分割し、それぞれの三角形の面積を計算します。
+	</p>
+	<p>
+		分割する三角形の数を増やしていくと、各三角形の外周が円周に近づいていきます。
+		極限をとると、底辺の和が円周の長さ\(2\pi r\)となり、高さが\(r\)で、三角形の面積の計算式\(\frac{1}{2}\)を考慮すると、円の面積
+		\[
+		\pi r^2
+		\]
+		が導かれる。
+	</p>
+</div>
+
+<div class="section">
+	<div class="section-title">積分</div>
+	<p>
+		関数\(f(x)\)のグラフにおいて、区間\([a,b]\)での面積を求める方法の一つがリーマン積分である。
+		区間を細かく分割し、各部分を長方形で近似した面積の極限として定義され、
+		\[
+		\int_a^b f(x)dx
+		\]
+		と表される。
+	</p>
+	<p>
+		積分は面積計算以外にも、速度から距離を求めるなど、変化の割合から全体量を計算する場面で広く応用される。
+		例えば、速度が変化する場合、各区間での「時間×速さ」を積分することで移動距離が求められる。
+	</p>
+	<p>
+		このように積分は、曲線で表される量を分割・近似し、その極限を取ることで様々な現象の総量を予測する手法となる。
+		なお、積分の計算には微分の考え方が深く関わっており、これは微積分学の基本定理として後に学ぶ。
+	</p>
+</div>
+
+<!-- 各コンテンツブロック間の区切り -->
+<hr class="section-separator">
+
+<!-- ここから元の「関数の微分」のコンテンツ -->
+<h1>関数の微分</h1>
+
+<div class="section">
+	<div class="section-title">微分係数</div>
+	<p>
+		関数\(y=f(x)\)の\(x=a\)での微分係数とは、
+		\(y=f(x)\)のグラフの点\((a, f(a))\)における接線の傾きのことである。
+		これを\(f'(a)\)と書く。
+	</p>
+	<p>
+		これは
+		\[
+		\frac{f(a+h)-f(a)}{h}
+		\]
+		の\(h\)を\(0\)に近づけたときの極限として定義される。
+	</p>
+</div>
+
+<div class="section">
+	<div class="section-title">導関数</div>
+	<p>
+		関数\(y=f(x)\)の導関数とは、それぞれの\(x\)に対して、その点での微分係数を対応させる関数のことである。
+	</p>
+	<p>
+		微分係数は一つの数である。
+		導関数は関数である。
+	</p>
+</div>
+
+<!-- 各コンテンツブロック間の区切り -->
+<hr class="section-separator">
+
+<!-- ここから元の「関数の積分」のコンテンツ -->
+<h1>関数の積分</h1>
+
+<div class="section">
+	<div class="section-title">リーマン和</div>
+	<p>
+		区間\(a \leq x \leq b\)での関数\(f(x)\)の積分を考えよう。
+		まずこの区間を分割する。
+		分割した区間内で点\(x_0 \leq x_1 \leq x_2 \leq \cdots \leq x_n\)を選ぶ。
+		その点での関数の値\(f(x_0), f(x_1), f(x_2), \cdots, f(x_n)\)を考える。
+		分割した区間の長さを\(d_0, d_1, d_2, \cdots, d_n\)とする。
+	</p>
+	<p>
+		この長方形の面積の総和は
+		\[
+		d_0f(x_0) + d_1f(x_1) + d_2f(x_2) + \cdots + d_nf(x_n)
+		\]
+		となる。
+		これをリーマン和という。
+	</p>
+	<p>
+		これを分割の幅を小さくしていったときの極限を考える。
+		その極限値が分割の仕方や点\(x_0, x_1, x_2, \cdots, x_n\)の選び方によらず同一の値になるとき、
+		\[
+		\int_a^b f(x)dx
+		\]
+		と表記する。
+		これを関数\(f(x)\)の\(a\)から\(b\)までの積分という。
+	</p>
+</div>
+
+<div class="section">
+	<div class="section-title">微積分学の基本定理</div>
+	<p>
+		微分と積分の関係を示す微積分学の基本定理について述べる。
+		\[
+		\frac{d}{dx} \int_a^x f(t)dt = f(x) \\
+		\int_a^b f'(x)dx = f(b) - f(a)
+		\]
+	</p>
+	<p>
+		この定理を端的に表現すれば、関数を積分しその結果を微分することで元の関数が復元されることを意味する。
+		つまり、微分と積分が互いに逆の操作であることを示している。
+	</p>
+</div>
+
+<!-- 各コンテンツブロック間の区切り -->
+<hr class="section-separator">
+
+<!-- ここから元の「微分方程式」のコンテンツ -->
+<h1>微分方程式</h1>
+
+<div class="section">
+	<div class="section-title">方程式</div>
+	<p>
+		\[
+		2x + 3 = 0 \\
+		x^2 + 4x + 3 = 0
+		\]
+		のような方程式について、この等式を満たす数\(x\)を解と呼ぶ。
+	</p>
+</div>
+
+<div class="section">
+	<div class="section-title">微分方程式</div>
+	<p>
+		未知の関数\(f(x)\)について、\(f(x)\)やその微分\(f'(x)\)たちについての関係式を微分方程式という。
+		例えば
+		\[
+		f'(x) + 1 = f(x) - x
+		\]
+		のようなもの。
+	</p>
+	<p>
+		これは、関数としての等式であり、この等式を満たす関数\(f(x)\)を求めることが微分方程式を解くことである。
+	</p>
+	<p>
+		微分方程式の代表例はニュートンの運動方程式
+		\[
+		m x''(t) = F
+		\]
+		である。
+		これは、時刻\(t\)における質量\(m\)の物体の位置\(x(t)\)、加速度\(x''(t)\)、物体にかかる力\(F\)についての方程式である。
+	</p>
+</div>
+
+<!-- メインサイトに戻るリンク（下部） -->
+<div class="top-bottom-link-container" style="margin-top: 50px;">
+    <a href="index.html" class="back-to-main-button">クイズページに戻る</a>
+</div>
+
+</body>
+</html>
